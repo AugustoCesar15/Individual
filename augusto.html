@@ -5,13 +5,93 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Biblie</title>
+    <title>AUGUSTO music</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" href="./img/icon1.png">
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 </head>
 
 <body>
     <nav>
-        
+        <div class="logo">
+            <h1>Augusto</h1>
+            <p>Music</p>
+        </div>
+        <div class="bar">
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">|</a></li>
+                <li><a href="">Ainda</a></li>
+                <li><a href="">Não</a></li>
+                <li><a href="">Sei</a></li>
+            </ul>
+        </div>
+        <div class="temazin">
+            <button id="botao-tema">
+                <span class="material-symbols-outlined" onclick="mudarTema()">
+                    settings_brightness
+                </span>
+            </button>
+        </div>
     </nav>
+    <div class="botaoSubir" id="navbar">
+        <span class="material-symbols-outlined" style="font-size: 4.3em; color: #bb3838;" onclick="subir()"
+            id="subi-ao-topo">
+            arrow_circle_up
+        </span>
+    </div>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+    <footer>
+        <p>&copy; Todos os direitos reservados - 2022 ACRC Desenvolvimento de Sitemas </p>
+
+    </footer>
 </body>
 
 </html>
+<!-- Botão subir -->
+<script>
+    window.onscroll = function () { scrollFunction() };
+    // window.onscroll = function () { scrollFunction1() };
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+            document.getElementById("navbar").style.top = "540px";
+            document.getElementById("navbar").style.right = "1vmax";
+        } else {
+            document.getElementById("navbar").style.right = "-8vmax";
+        }
+    }
+
+
+    var btn = document.querySelector("#subi-ao-topo");
+    btn.addEventListener("click", function () {
+        window.scrollTo(0, 0);
+    });
+</script>
+
+<!-- Mudar Tema -->
+<script>
+    var numTema = 1
+    function mudarTema() {
+        var botaoTema = document.getElementById("botao-tema").style
+        var corpo = document.body.style
+
+        if (numTema == 1) {
+            corpo.backgroundColor = "#383838"
+            botaoTema.transform = "rotate(180deg)"
+
+            numTema = 0
+
+        } else {
+            corpo.backgroundColor = "#f5f5f5"
+            botaoTema.transform = "rotate(0deg)"
+
+            numTema = 1
+        }
+    }
+</script>

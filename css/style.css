@@ -44,7 +44,7 @@ nav .logo h1 {
 @keyframes augusto {
     from {
         transform: translateX(-100px);
-    }
+    }   
 
     to {
         transform: translateX(0px);
@@ -190,12 +190,6 @@ nav .temazin span:hover {
     background-color: #bb3838df;
     border-radius: 30px;
 }
-
-
-
-
-
-
 
 
 

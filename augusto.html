@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AUGUSTO music</title>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/index.css">
     <link rel="icon" href="./img/icon1.png">
 
     <link rel="stylesheet"
@@ -14,28 +15,7 @@
 </head>
 
 <body>
-    <nav>
-        <div class="logo">
-            <h1>Augusto</h1>
-            <p>Music</p>
-        </div>
-        <div class="bar">
-            <ul>
-                <li><a href="">Home</a></li>
-                <li><a href="">|</a></li>
-                <li><a href="">Ainda</a></li>
-                <li><a href="">Não</a></li>
-                <li><a href="">Sei</a></li>
-            </ul>
-        </div>
-        <div class="temazin">
-            <button id="botao-tema">
-                <span class="material-symbols-outlined" onclick="mudarTema()">
-                    settings_brightness
-                </span>
-            </button>
-        </div>
-    </nav>
+
     <div class="botaoSubir" id="navbar">
         <span class="material-symbols-outlined" style="font-size: 4.3em; color: #bb3838;" onclick="subir()"
             id="subi-ao-topo">
@@ -43,13 +23,58 @@
         </span>
     </div>
 
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
-    <footer>
-        <p>&copy; Todos os direitos reservados - 2022 ACRC Desenvolvimento de Sitemas </p>
+    <!-- Carousel -->
+    <div class="sectionPrincipal" id="sec-principal">
+        <nav>
+            <div class="logo">
+                <h1>Augusto</h1>
+                <p>Music</p>
+            </div>
+            <div class="bar">
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">|</a></li>
+                    <li><a href="">Ainda</a></li>
+                    <li><a href="">Não</a></li>
+                    <li><a href="">Sei</a></li>
+                </ul>
+            </div>
+            <div class="temazin">
+                <button id="botao-tema">
+                    <span class="material-symbols-outlined" onclick="mudarTema()">
+                        settings_brightness
+                    </span>
+                </button>
+            </div>
+        </nav>
+        <div class="primeiraParte">
 
-    </footer>
+            <div class="parteA">
+                <button><span class="material-symbols-outlined" id="primeiro-left" onclick="voltar()">
+                        chevron_left
+                    </span>
+                </button>
+            </div>
+            <div class="parteB"></div>
+            <div class="parteC">
+                <button><span class="material-symbols-outlined" onclick="proximo()">
+                        chevron_right
+                    </span>
+                </button>
+            </div>
+        </div>
+
+
+
+        <div class="espaco">
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        </div>
+        <footer>
+            <p>&copy; Todos os direitos reservados - 2022 ACRC Desenvolvimento de Sitemas </p>
+
+        </footer>
 </body>
 
 </html>
@@ -92,6 +117,45 @@
             botaoTema.transform = "rotate(0deg)"
 
             numTema = 1
+        }
+    }
+</script>
+
+<script>
+    var sec = document.getElementById("sec-principal").style
+    var setaEsquerda = document.getElementById("primeiro-left").style
+
+    var proximoContador = 1
+    function proximo() {
+        if (proximoContador == 1) {
+            sec.backgroundImage = "url('./../img/violao.jpg')"
+
+            proximoContador = 2
+
+        } else if (proximoContador == 2) {
+            sec.backgroundImage = "url('./../img/baixo.jpg')"
+
+            proximoContador = 0
+        } else {
+            sec.backgroundImage = "url('./../img/teclado2.jpg')"
+
+            proximoContador = 1
+        }
+
+    }
+
+    function voltar() {
+        if (proximoContador == 2) {
+            sec.backgroundImage = "url('./../img/teclado2.jpg')"
+            proximoContador = 1
+
+        } else if (proximoContador == 1) {
+            sec.backgroundImage = "url('./../img/baixo.jpg')"
+            proximoContador = 0
+
+        } else {
+            sec.backgroundImage = "url('./../img/violao.jpg')"
+            proximoContador = 2
         }
     }
 </script>

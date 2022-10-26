@@ -6,6 +6,7 @@
     background-image: url("./../img/teclado2.jpg");
     background-size: cover;
     background-position: center;
+    background-color: #ffffff5f;
 }
 
 .primeiraParte{
@@ -13,7 +14,7 @@
     height: 39.1vmax;
     display: flex;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
     transition: all 1s;
 }
 
@@ -44,5 +45,24 @@
 
 .primeiraParte .parteB{
     width: 70%;
-    height: 38vmax;
+    height: 30vmax;
+    display: flex;
+    align-items: center;
+}
+
+.primeiraParte .parteB .infoPrincipal1 {
+    width: 40%;
+    height: 130px;
+    background-color: #bb3838;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.primeiraParte .parteB .infoPrincipal1 p{
+    color: #f5f5f5;
+    font-family: 'El Messiri';
+    font-size: 0.9em;
+    text-align: center;
 }

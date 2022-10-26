@@ -13,7 +13,9 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 </head>
-
+<!-- Site pra pegar de exemplo
+https://www.musicdot.com.br/
+-->
 <body>
 
     <div class="botaoSubir" id="navbar">
@@ -56,7 +58,13 @@
                     </span>
                 </button>
             </div>
-            <div class="parteB"></div>
+            <div class="parteB" id="caixa-do-texto-principal">
+                <div class="infoPrincipal1" id="texto-da-info-principal">
+                    <p id="texto-principall">Aprenda a tocar um dos principais instrumentos! <br>
+                        De forma fácil e prática, sem precisar sair de casa <br>
+                        e de forma totalmente gratuita.</p>
+                </div>
+            </div>
             <div class="parteC">
                 <button><span class="material-symbols-outlined" onclick="proximo()">
                         chevron_right
@@ -105,56 +113,136 @@
     function mudarTema() {
         var botaoTema = document.getElementById("botao-tema").style
         var corpo = document.body.style
+        var textoPrincipal = document.getElementById("texto-principall").style
 
         if (numTema == 1) {
             corpo.backgroundColor = "#383838"
             botaoTema.transform = "rotate(180deg)"
+            textoPrincipal.color = "#383838"
 
             numTema = 0
 
         } else {
             corpo.backgroundColor = "#f5f5f5"
             botaoTema.transform = "rotate(0deg)"
+            textoPrincipal.color = "#f5f5f5"
 
             numTema = 1
         }
     }
 </script>
 
+<!-- Carousel -->
 <script>
     var sec = document.getElementById("sec-principal").style
     var setaEsquerda = document.getElementById("primeiro-left").style
+    var infoPrincipal = document.getElementById("caixa-do-texto-principal").style
+    var segundoTexto = document.getElementById("texto-da-info-principal")
 
     var proximoContador = 1
+
+    setInterval(
+        function proximo() {
+            if (proximoContador == 1) {
+                sec.backgroundImage = "url('./../img/violao.jpg')"
+                infoPrincipal.justifyContent = "right"
+                infoPrincipal.height = "30vmax"
+
+                segundoTexto.innerHTML = `<p>Aprender a tocar um instrumento te ajuda a:<br> Desenvolver capacidade de memorização,<br> desenvolver a memória e desenvolver<br> a coordenação motora.</p>`
+
+                proximoContador = 2
+
+            } else if (proximoContador == 2) {
+                sec.backgroundImage = "url('./../img/baixo.jpg')"
+                infoPrincipal.justifyContent = "left"
+                infoPrincipal.alignItems = "flex-end"
+                infoPrincipal.height = "35vmax"
+
+                segundoTexto.innerHTML = `<p>Então comece já o aprendizado em aglum instrumento, escolha um dos nossos cursos e não perca tempo! <br> Temos: Teclado, violão e contrabaixo.</p>`
+
+                proximoContador = 0
+            } else {
+                sec.backgroundImage = "url('./../img/teclado2.jpg')"
+                infoPrincipal.height = "30vmax"
+                infoPrincipal.justifyContent = "left"
+                infoPrincipal.alignItems = "center"
+
+                segundoTexto.innerHTML = `<p>Aprenda a tocar um dos principais instrumentos! <br>
+                De forma fácil e prática, sem precisar sair de casa <br>
+                e de forma totalmente gratuita.</p>`
+
+                proximoContador = 1
+            }
+        }, 4500)
+
+
+
+
     function proximo() {
         if (proximoContador == 1) {
             sec.backgroundImage = "url('./../img/violao.jpg')"
+            infoPrincipal.justifyContent = "right"
+            infoPrincipal.height = "30vmax"
+
+            segundoTexto.innerHTML = `<p>Aprender a tocar um instrumento te ajuda a:<br> Desenvolver capacidade de memorização,<br> desenvolver a memória e desenvolver<br> a coordenação motora.</p>`
 
             proximoContador = 2
 
         } else if (proximoContador == 2) {
             sec.backgroundImage = "url('./../img/baixo.jpg')"
+            infoPrincipal.justifyContent = "left"
+            infoPrincipal.alignItems = "flex-end"
+            infoPrincipal.height = "35vmax"
+
+            segundoTexto.innerHTML = `<p>Então comece já o aprendizado em algum instrumento!<br> Escolha um dos nossos cursos e não perca tempo! <br> Temos: Teclado, violão e contrabaixo.</p>`
 
             proximoContador = 0
         } else {
             sec.backgroundImage = "url('./../img/teclado2.jpg')"
+            infoPrincipal.height = "30vmax"
+            infoPrincipal.justifyContent = "left"
+            infoPrincipal.alignItems = "center"
+
+            segundoTexto.innerHTML = `<p>
+                Aprenda a tocar um dos principais instrumentos! <br>
+                De forma fácil e prática, sem precisar sair de casa <br>
+                e de forma totalmente gratuita.</p>`
 
             proximoContador = 1
         }
-
     }
 
     function voltar() {
         if (proximoContador == 2) {
             sec.backgroundImage = "url('./../img/teclado2.jpg')"
+            infoPrincipal.height = "30vmax"
+            infoPrincipal.justifyContent = "left"
+            infoPrincipal.alignItems = "center"
+
+            segundoTexto.innerHTML = `<p>
+                Aprenda a tocar um dos principais instrumentos! <br>
+                De forma fácil e prática, sem precisar sair de casa <br>
+                e de forma totalmente gratuita.</p>`
+
             proximoContador = 1
 
         } else if (proximoContador == 1) {
             sec.backgroundImage = "url('./../img/baixo.jpg')"
+            infoPrincipal.justifyContent = "left"
+            infoPrincipal.alignItems = "flex-end"
+            infoPrincipal.height = "35vmax"
+
+            segundoTexto.innerHTML = `<p>Então comece já o aprendizado em algum instrumento!<br> Escolha um dos nossos cursos e não perca tempo! <br> Temos: Teclado, violão e contrabaixo.</p>`
+
             proximoContador = 0
 
         } else {
             sec.backgroundImage = "url('./../img/violao.jpg')"
+            infoPrincipal.justifyContent = "right"
+            infoPrincipal.height = "30vmax"
+
+            segundoTexto.innerHTML = `<p>Aprender a tocar um instrumento te ajuda a:<br> Desenvolver capacidade de memorização,<br> desenvolver a memória e desenvolver<br> a coordenação motora.</p>`
+
             proximoContador = 2
         }
     }

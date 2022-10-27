@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TESTE</title>
+</head>
+<style>
+    *{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+html, body{
+    height: 100%;
+}
+
+h1,h2{
+    color:#ccc;
+    display: block;
+    text-align: center;
+}
+
+.div1 {
+    background-color:blue;
+    z-index: 1;
+    position:fixed;
+    height: 100%;
+    width: 100%;
+    top:0px;
+    margin-top: 0;
+}
+
+.div2{
+    width: 90%;
+    height: 100%;
+    background-color: red;
+    position: relative;
+    z-index: 2;
+    margin: 100vh auto 0;
+    border-radius: 40px 40px 0 0;
+}
+</style>
+
+<body>
+    <div class="div1">
+        <h1>Conteudo div1</h1>
+    </div>
+    <div class="div2">
+        <h2>Conteudo div2</h2>
+    </div>
+</body>
+
+</html>

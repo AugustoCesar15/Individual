@@ -1,16 +1,15 @@
-
 /* Primeira parte */
-.sectionPrincipal{
+.sectionPrincipal {
     width: 100%;
     height: 45.8vmax;
     transition: all 1s;
     background-image: url("./../img/teclado2.jpg");
-    background-size: cover;
+    /* background-size: cover; */
     background-position: center;
     background-color: #ffffff5f;
 }
 
-.primeiraParte{
+.primeiraParte {
     width: 100%;
     height: 39.1vmax;
     display: flex;
@@ -19,7 +18,8 @@
     transition: all 1s;
 }
 
-.primeiraParte .parteA, .primeiraParte .parteC{
+.primeiraParte .parteA,
+.primeiraParte .parteC {
     width: 15%;
     height: 39.1vmax;
     display: flex;
@@ -28,23 +28,26 @@
     /* background-color: #ffffff5f; */
 }
 
-.primeiraParte .parteA button, .primeiraParte .parteC button{
+.primeiraParte .parteA button,
+.primeiraParte .parteC button {
     background-color: transparent;
     border: 0;
     transform: scale(1.5);
 }
 
-.primeiraParte .parteA span, .primeiraParte .parteC span{
+.primeiraParte .parteA span,
+.primeiraParte .parteC span {
     font-size: 3em;
     color: #f5f5f5;
     transition: all 1s;
 }
 
-.primeiraParte .parteA span:hover, .primeiraParte .parteC span:hover{
+.primeiraParte .parteA span:hover,
+.primeiraParte .parteC span:hover {
     cursor: pointer;
 }
 
-.primeiraParte .parteB{
+.primeiraParte .parteB {
     width: 70%;
     height: 30vmax;
     display: flex;
@@ -61,7 +64,7 @@
     align-items: center;
 }
 
-.primeiraParte .parteB .infoPrincipal1 p{
+.primeiraParte .parteB .infoPrincipal1 p {
     color: #f5f5f5;
     font-family: 'El Messiri';
     font-size: 1em;
@@ -71,33 +74,20 @@
 
 
 
-/* Divs teste */
-/* .maisteste{
-    width: 100%;
-    height: 500px;
-    background-color: #38bb38;
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .div1 {
-    width: 70%;
-    height: 500px;
-    background-color:blue;
+    width: 100%;
+    /* background-color:blue; */
     z-index: 1;
-    position: sticky;
-    top: 45vmax;
-    /* margin-top: 0;
+    position: fixed;
+    /* height: 100%; */
+    top: 0px;
+    margin-top: 0;
 }
 
-.div2{
-    width: 90%;
-    height: 80px;
-    background-color: red;
+.div2 {
+    height: 50vmax;
+    background-color: #f5f5f5;
     position: relative;
     z-index: 2;
-    margin: 0 auto;
-    border-radius: 40px 40px 0 0;
-} */
+    margin-top: 100vh;
+}

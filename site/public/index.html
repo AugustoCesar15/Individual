@@ -31,11 +31,7 @@
         </div>
         <div class="links a">
             <ul>
-                <li>
-                    <a href="#">História</a>
-                </li>
-                <li> <a href="#">Curiosidades</a>
-                </li>
+                <li><a href="#">Curiosidades</a></li>
             </ul>
         </div>
         <div class="logo">
@@ -44,24 +40,81 @@
         <div class="links">
             <ul>
                 <li><a href="#">Quiz</a></li>
-                <li><a href="#">Ranking</a></li>
             </ul>
         </div>
         <div class="registro">
             <ul>
                 <li><a href="./login.html">Entrar</a></li>
-                <li class="cad"><a href="./cadastro.html">Cadastre-se</a></li>
+                <li class="cad"><a href="./cadastro.html">Cadastrar</a></li>
             </ul>
         </div>
     </nav>
+    <!-- Nav Responsiva -->
+    <div class="navBar">
+        <div class="logo">
+            <h1>The Bible</h1>
+        </div>
+        <div class="menu">
+            <button>
+                <span class="material-symbols-outlined" onclick="mudarTema()" id="button-tema">
+                    settings_brightness
+                </span>
+            </button>
+            <button>
+                <span class="material-symbols-outlined" onclick="menuEscondida()">
+                    menu
+                </span>
+            </button>
+        </div>
+        <div class="escondida" id="div-escondida">
+            <button class="menosEsse">
+                <span class="material-symbols-outlined" onclick="sumirEscondida()">
+                    close
+                </span>
+            </button>
+            <ul>
+                <li><a href="">Curiosidades</a></li>
+                <li><a href="">Quiz</a></li>
+                <li><a href="./login.html">Login</a></li>
+                <li class="cad"><a href="./cadastro.html">Cadastrar</a></li>
+            </ul>
+        </div>
+    </div>
 
     <!-- Section Principal - Possivel carousel -->
     <section class="sectionPrincipal">
-        <div class="imagem1" id="imagem1-div-um"></div>
-        <div class="imagem2" id="imagem1-div-dois"></div>
-        <button onclick="mudarImagem()">Proximo</button>
+        <button onclick="voltarCarousel()">
+            <span class="material-symbols-outlined">
+                arrow_back_ios
+            </span>
+        </button>
+        <div class="imagem1" id="imagem1-div-um">
+            <div class="text">
+                <h3>Seja Bem-vindo!</h3>
+                <p>Este site foi desenvolvido para você <br> que se
+                    considera um amante da sagrada escritura, <br> e também para
+                    você que simplesmente quer aprender mais sobre!
+                </p>
+            </div>
+        </div>
+        <div class="imagem2" id="imagem1-div-dois">
+            <div class="text">
+                <h3>Hebreus 10:38 <span>"O justo viverá pela fé;"
+                    </span></h3>
+                <p>Romanos 10:17 <i>"E assim, a fé vem pelo ouvir, e o ouvir
+                        a palavra de Deus" </i>
+                </p>
+                <p>Salmos 119:9 <i>"De que maneira poderá o jovem guardar
+                        puro o seu caminho? Observando-o segundo a Tua palavra" </i>
+            </div>
+        </div>
+        <div class="imagem3" id="imagem1-div-tres"></div>
+        <button onclick="mudarImagem()">
+            <span class="material-symbols-outlined">
+                arrow_forward_ios
+            </span>
+        </button>
     </section>
-
 </body>
 
 </html>
@@ -95,20 +148,111 @@
 <script>
     var numCarousel = 1
 
-    function mudarImagem() {
+    setInterval(function mudarImagem() {
         var img1 = document.getElementById('imagem1-div-um')
         var img2 = document.getElementById('imagem1-div-dois')
+        var img3 = document.getElementById('imagem1-div-tres')
 
         if (numCarousel == 1) {
             img1.style.display = "none"
+            img3.style.display = "none"
             img2.style.display = "flex"
 
             numCarousel = 2
+
         } else if (numCarousel == 2) {
+            img1.style.display = "none"
+            img2.style.display = "none"
+            img3.style.display = "flex"
+
+            numCarousel = 3
+
+        } else if (numCarousel == 3) {
             img1.style.display = "flex"
+            img3.style.display = "none"
             img2.style.display = "none"
 
             numCarousel = 1
+        }
+    }, 6000)
+
+    function mudarImagem() {
+        var img1 = document.getElementById('imagem1-div-um')
+        var img2 = document.getElementById('imagem1-div-dois')
+        var img3 = document.getElementById('imagem1-div-tres')
+
+        if (numCarousel == 1) {
+            img1.style.display = "none"
+            img3.style.display = "none"
+            img2.style.display = "flex"
+
+            numCarousel = 2
+
+        } else if (numCarousel == 2) {
+            img1.style.display = "none"
+            img2.style.display = "none"
+            img3.style.display = "flex"
+
+            numCarousel = 3
+
+        } else if (numCarousel == 3) {
+            img1.style.display = "flex"
+            img3.style.display = "none"
+            img2.style.display = "none"
+
+            numCarousel = 1
+        }
+    }
+
+    function voltarCarousel() {
+        var img1 = document.getElementById('imagem1-div-um')
+        var img2 = document.getElementById('imagem1-div-dois')
+        var img3 = document.getElementById('imagem1-div-tres')
+
+        if (numCarousel == 1) {
+            img3.style.display = "none"
+            img2.style.display = "none"
+            img1.style.display = "flex"
+
+            numCarousel = 2
+
+        } else if (numCarousel == 2) {
+            img3.style.display = "flex"
+            img1.style.display = "none"
+            img2.style.display = "none"
+
+            numCarousel = 3
+
+        } else if (numCarousel == 3) {
+            img3.style.display = "none"
+            img2.style.display = "flex"
+            img1.style.display = "none"
+
+            numCarousel = 1
+        }
+    }
+</script>
+
+<!-- Nav escondida -->
+<script>
+    var numBar = 1
+    var escond = document.getElementById('div-escondida')
+    function menuEscondida() {
+
+        if (numBar == 1) {
+            escond.style.top = "0"
+
+            numBar++
+
+        }
+    }
+
+    function sumirEscondida() {
+
+        if (numBar != 1) {
+            escond.style.top="-500%"
+
+            numBar = 1
         }
     }
 </script>

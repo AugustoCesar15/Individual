@@ -6,84 +6,109 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>AquaTech | Página Inicial</title>
+    <title>The Bible | Página Inicial</title>
+    <link rel="icon" href="./assets/icon/icon.png">
 
     <script src="./js/funcoes.js"></script>
 
     <link rel="icon" href="./assets/icon/favicon2.ico">
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <!-- <link
-        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet"> -->
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
 </head>
 
 <body>
-    <div class="header">
-        <div class="container">
-            <h1 class="titulo">AquaTech</h1>
-            <ul class="navbar">
-                <li class="agora">Inicial</li>
+    <!-- NavBar -->
+    <nav>
+        <div class="temazin">
+            <button>
+                <span class="material-symbols-outlined" onclick="mudarTema()" id="button-tema">
+                    settings_brightness
+                </span>
+            </button>
+        </div>
+        <div class="links a">
+            <ul>
                 <li>
-                    <a href="./simulador.html">Simulador</a>
+                    <a href="#">História</a>
                 </li>
-                <li>|</li>
-                <li>
-                    <a href="./login.html">Login</a>
-                </li>
-                <li>
-                    <a href="./cadastro.html">Cadastro</a>
+                <li> <a href="#">Curiosidades</a>
                 </li>
             </ul>
         </div>
-    </div>
-
-    <div class="banner">
-        <div class="container">
-            <p>
-                Preservando <span>hoje</span> para existirem <span>amanhã</span>.
-            </p>
+        <div class="logo">
+            <h1 id="titulo-nav">The Bible</h1>
         </div>
-    </div>
-
-    <div class="social">
-        <div class="container">
-            <div class="boxes">
-                <div class="box">
-                    <img src="./assets/imgs/planet-earth_color.png" alt="icone da missão">
-                    <h4>Missão</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
-
-                <div class="box">
-                    <img src="./assets/imgs/lightbulb_color.png" alt="icone da visão">
-                    <h4>Visão</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
-
-                <div class="box">
-                    <img src="./assets/imgs/growth_color.png" alt="icone dos valores">
-                    <h4>Valores</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
-            </div>
+        <div class="links">
+            <ul>
+                <li><a href="#">Quiz</a></li>
+                <li><a href="#">Ranking</a></li>
+            </ul>
         </div>
-
-
-    </div>
-
-    <!--footer inicio-->
-    <div class="footer">
-        <div class="container">
-            <h4>Feito com amor por um aluno &hearts; SPTech &copy; 2022
-                <br>
-                <span class="version">
-                    v1.0.0
-                </span>
-            </h4>
+        <div class="registro">
+            <ul>
+                <li><a href="./login.html">Entrar</a></li>
+                <li class="cad"><a href="./cadastro.html">Cadastre-se</a></li>
+            </ul>
         </div>
-    </div>
-    <!--footer fim-->
+    </nav>
+
+    <!-- Section Principal - Possivel carousel -->
+    <section class="sectionPrincipal">
+        <div class="imagem1" id="imagem1-div-um"></div>
+        <div class="imagem2" id="imagem1-div-dois"></div>
+        <button onclick="mudarImagem()">Proximo</button>
+    </section>
+
 </body>
 
 </html>
+
+<!-- Mudar Tema -->
+<script>
+    var numTema = 1
+    function mudarTema() {
+        var btn = document.getElementById('button-tema')
+        var body = document.body.style
+        var h1 = document.getElementById('titulo-nav').style
+
+        if (numTema == 1) {
+            body.backgroundColor = "#383838"
+            btn.style.transform = "rotate(540deg)"
+            h1.color = "#f5f5f5"
+
+            numTema++
+        } else {
+            body.backgroundColor = "#f5f5f5"
+            btn.style.transform = "rotate(0deg)"
+            h1.color = "#383838"
+
+            numTema = 1
+        }
+    }
+
+</script>
+
+<!-- Carousel -->
+<script>
+    var numCarousel = 1
+
+    function mudarImagem() {
+        var img1 = document.getElementById('imagem1-div-um')
+        var img2 = document.getElementById('imagem1-div-dois')
+
+        if (numCarousel == 1) {
+            img1.style.display = "none"
+            img2.style.display = "flex"
+
+            numCarousel = 2
+        } else if (numCarousel == 2) {
+            img1.style.display = "flex"
+            img2.style.display = "none"
+
+            numCarousel = 1
+        }
+    }
+</script>

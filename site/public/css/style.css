@@ -42,9 +42,8 @@ nav {
   align-items: center;
 }
 
-nav .temazin,
-nav .registro {
-  width: 15%;
+nav .temazin {
+  width: 35%;
   height: var(--navHei);
   display: flex;
   justify-content: center;
@@ -59,25 +58,17 @@ nav .temazin button {
   align-items: center;
   background-color: transparent;
   border: none;
+  outline: none;
 }
+/* 
+nav .temazin button:focus {
+  transform: translateY(-5px);
+} */
 
 nav .temazin button span {
   color: var(--clr);
   font-size: 2.5em;
 }
-
-nav .links {
-  width: 25%;
-  height: var(--navHei);
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-nav .a {
-  justify-content: flex-end;
-}
-
 nav .logo {
   width: 20%;
   height: var(--navHei);
@@ -85,7 +76,6 @@ nav .logo {
   justify-content: center;
   align-items: center;
 }
-
 nav .logo .h1 {
   font-size: 2.8em;
   font-family: var(--vibes);
@@ -94,61 +84,21 @@ nav .logo .h1 {
   position: absolute;
   text-decoration: none;
 }
-
 nav .logo .h1:hover {
   position: absolute;
   letter-spacing: 5px;
   cursor: pointer;
 }
 
-nav ul {
-  height: var(--navHei);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
-nav ul li {
-  list-style: none;
-  margin: 0 15px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
-.aqui{
+
+
+
+.aqui {
   border-bottom: 2px solid var(--clr);
-} 
-
-nav ul li a {
-  text-decoration: none;
-  font-family: var(--messi);
-  color: var(--clr);
-  font-size: 1.2em;
 }
 
-nav ul li:hover {
-  /* transform: translateY(-10px); */
-}
-
-nav .registro {
-  width: 20%;
-  padding-right: 10px;
-}
-
-nav .cad {
-  padding: 10px;
-  border-radius: 20px;
-  background-color: var(--clr);
-}
-
-nav .cad:hover {
-  transform: scale(1.1);
-}
-
-nav .cad a {
-  color: #f5f5f5;
-}
 
 
 /* Nav Responsiva */
@@ -156,15 +106,26 @@ nav .cad a {
   --RnavHei: 50px;
 }
 
+
+
+
+
+
+
+
+
 .navBar {
-  width: 100%;
-  height: var(--RnavHei);
+  width: 25%;
+  height: 100vh;
   box-shadow: 1px 0 5px #161618;
-  position: relative;
-  z-index: 30;
-  display: none;
+  position: fixed;
+  z-index: 30000;
+  left: -100%;
+  display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  background-color: #f5f5f5;
 }
 
 .navBar .logo {
@@ -284,7 +245,7 @@ nav .cad a {
 
 
 
-.botaoSubir{
+.botaoSubir {
   background-color: transparent;
   width: 80px;
   height: 80px;
@@ -292,19 +253,22 @@ nav .cad a {
   justify-content: center;
   align-items: center;
   position: sticky;
-  top: 40vmax;
+  top: 80%;
   left: 95%;
 }
-.botaoSubir span{
+
+.botaoSubir span {
   font-size: 2.5em;
   color: #161618;
   animation: setaup 0.8s infinite alternate-reverse;
 }
-@keyframes setaup{
-  from{
+
+@keyframes setaup {
+  from {
     transform: translateY(0);
   }
-  to{
+
+  to {
     transform: translateY(-5px);
   }
 }
@@ -325,7 +289,11 @@ nav .cad a {
   background-color: transparent;
   padding-top: 35px;
 }
-.sectionPrincipal .versiculosHome1, .versiculosHome2, .versiculosHome3, .versiculosHome4 {
+
+.sectionPrincipal .versiculosHome1,
+.versiculosHome2,
+.versiculosHome3,
+.versiculosHome4 {
   width: 75%;
   height: 35vmax;
   background-size: cover;
@@ -336,18 +304,23 @@ nav .cad a {
   align-items: center;
   flex-direction: column;
 }
-.sectionPrincipal .versiculosHome1{
+
+.sectionPrincipal .versiculosHome1 {
   background-image: url('./../assets/imgs/1.png');
 }
-.sectionPrincipal .versiculosHome2{
+
+.sectionPrincipal .versiculosHome2 {
   background-image: url('./../assets/imgs/2.png');
 }
-.sectionPrincipal .versiculosHome3{
+
+.sectionPrincipal .versiculosHome3 {
   background-image: url('./../assets/imgs/3.png');
 }
-.sectionPrincipal .versiculosHome4{
+
+.sectionPrincipal .versiculosHome4 {
   background-image: url('./../assets/imgs/4.png');
 }
+
 .sectionPrincipal .versiculosHome h2 {
   color: #f5f5f5;
   font-size: 3em;
@@ -355,6 +328,7 @@ nav .cad a {
   font-weight: normal;
   border-radius: 20%;
 }
+
 .sectionPrincipal .versiculosHome p {
   color: #f5f5f5;
   font-size: 2em;
@@ -383,6 +357,7 @@ nav .cad a {
   justify-content: center;
   align-items: center;
 }
+
 .sectionSegunda .sobre {
   width: 70%;
   height: 30vmax;
@@ -397,6 +372,7 @@ nav .cad a {
   padding: 20px;
   box-shadow: 0 0 10px 1px black;
 }
+
 .sectionSegunda .sobre .caixa {
   width: 30%;
   height: 14vmax;
@@ -406,10 +382,12 @@ nav .cad a {
   align-items: center;
   flex-direction: column;
 }
+
 .sectionSegunda .sobre .caixa span {
   color: var(--clr);
   font-size: 3.2em;
 }
+
 .sectionSegunda .sobre .caixa p {
   color: #383838;
   font-family: var(--messi);
@@ -420,6 +398,7 @@ nav .cad a {
   justify-content: space-evenly;
   flex-direction: column;
 }
+
 .sectionSegunda .mensagem {
   width: 100%;
   height: 14vmax;
@@ -427,6 +406,7 @@ nav .cad a {
   justify-content: center;
   align-items: center;
 }
+
 .sectionSegunda .mensagem h2 {
   font-size: 3em;
   font-weight: normal;
@@ -457,6 +437,7 @@ nav .cad a {
   align-items: flex-start;
   background-color: transparent;
 }
+
 .sectionTerceira .cards {
   width: 80%;
   height: 25vmax;
@@ -466,6 +447,7 @@ nav .cad a {
   position: absolute;
   z-index: 1;
 }
+
 .sectionTerceira .card {
   width: 30%;
   height: 29vmax;
@@ -476,6 +458,7 @@ nav .cad a {
   align-items: center;
   flex-direction: column;
 }
+
 .sectionTerceira .card img {
   position: absolute;
   bottom: 16vmax;
@@ -484,11 +467,13 @@ nav .cad a {
   height: 15vmax;
   border-radius: 20px 20px 0 0;
 }
+
 .sectionTerceira .card img:hover {
   transform: translateY(-3vmax);
   height: 16vmax;
   border-radius: 20px;
 }
+
 .sectionTerceira .card .titulo {
   width: 100%;
   height: 50%;
@@ -497,6 +482,7 @@ nav .cad a {
   align-items: flex-end;
   text-align: center;
 }
+
 .sectionTerceira .card .textos {
   width: 80%;
   height: 50%;
@@ -504,12 +490,14 @@ nav .cad a {
   justify-content: center;
   align-items: flex-start;
 }
+
 .sectionTerceira .card h3 {
   color: var(--clr);
   font-family: var(--messi);
   font-weight: 600;
   font-size: 1.5em;
 }
+
 .sectionTerceira .card p {
   color: #f5f5f5;
   font-family: 'Ubuntu';
@@ -518,20 +506,24 @@ nav .cad a {
   letter-spacing: 1px;
   line-height: 22px;
 }
+
 .sectionTerceira .cad a {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .sectionTerceira .card a {
   color: #b1b1b1;
   margin-left: 10%;
   outline: none;
 }
+
 .sectionTerceira .card a:focus {
   transform: translateY(-2px);
 }
+
 .sectionTerceira .direcionamento {
   width: 100%;
   height: 55vmax;
@@ -539,18 +531,21 @@ nav .cad a {
   justify-content: center;
   align-items: flex-end;
 }
+
 .sectionTerceira .direcionamento .texto {
   width: 60%;
   display: flex;
   justify-content: center;
   flex-direction: column;
 }
+
 .sectionTerceira .direcionamento p {
   font-size: 1.7em;
   color: #383838;
   font-family: var(--messi);
   text-align: center;
 }
+
 .sectionTerceira .direcionamento span {
   margin-top: 30px;
   font-size: 3em;
@@ -558,6 +553,7 @@ nav .cad a {
   text-align: center;
   animation: prabaixo 1s infinite alternate;
 }
+
 @keyframes prabaixo {
   from {
     transform: translateY(0);
@@ -587,6 +583,7 @@ nav .cad a {
   justify-content: center;
   align-items: center;
 }
+
 .sectionQuarta .partea,
 .sectionQuarta .parteb {
   width: 50%;
@@ -596,9 +593,11 @@ nav .cad a {
   align-items: center;
   flex-direction: column;
 }
+
 .sectionQuarta .partea img {
   width: 80%;
 }
+
 .sectionQuarta .parteb .titulo,
 .sectionQuarta .parteb .botoes {
   width: 80%;
@@ -607,6 +606,7 @@ nav .cad a {
   justify-content: flex-start;
   align-items: center;
 }
+
 .sectionQuarta .parteb .texto {
   width: 75%;
   height: 30%;
@@ -614,18 +614,21 @@ nav .cad a {
   justify-content: flex-start;
   align-items: center;
 }
+
 .sectionQuarta .parteb .titulo h2 {
   color: #f5f5f5;
   font-family: var(--vibes);
   font-weight: normal;
   font-size: 3em;
 }
+
 .sectionQuarta .parteb .texto p {
   color: #162229;
   font-family: 'Ubuntu';
   font-size: 1.7em;
   font-weight: 600;
 }
+
 .sectionQuarta .parteb .botoes button {
   width: 25%;
   height: 3.5vmax;
@@ -638,10 +641,12 @@ nav .cad a {
   font-size: 1.1em;
   outline: none;
 }
+
 .sectionQuarta .parteb .botoes button:hover {
   background-color: transparent;
   color: #162229;
 }
+
 .sectionQuarta .parteb .botoes button:focus {
   transform: translateY(-5px);
   background-color: transparent;
@@ -665,6 +670,7 @@ nav .cad a {
   justify-content: center;
   align-items: center;
 }
+
 .sectionQuinta .parteA,
 .sectionQuinta .parteB {
   width: 50%;
@@ -674,37 +680,43 @@ nav .cad a {
   align-items: center;
   flex-direction: column;
 }
+
 .sectionQuinta .parteB img {
   width: 70%;
   transform: scaleX(-1);
 }
-.sectionQuinta .parteA .titulo{
+
+.sectionQuinta .parteA .titulo {
   width: 85%;
   height: 30%;
   display: flex;
   align-items: center;
   padding-left: 20px;
 }
-.sectionQuinta .parteA .titulo h2{
+
+.sectionQuinta .parteA .titulo h2 {
   color: #383838;
   font-family: var(--vibes);
   font-weight: normal;
   font-size: 3.4em;
   line-height: 45px;
 }
-.sectionQuinta .parteA .texto{
+
+.sectionQuinta .parteA .texto {
   width: 70%;
   height: 50%;
   display: flex;
   align-items: flex-end;
   /* background-color: #e3b062; */
 }
-.sectionQuinta .parteA .texto p{
+
+.sectionQuinta .parteA .texto p {
   color: var(--clr);
   font-family: 'Ubuntu';
   font-size: 1.5em;
   font-weight: 100;
 }
+
 .sectionQuinta .parteA .botao {
   width: 70%;
   height: 30%;
@@ -713,7 +725,8 @@ nav .cad a {
   align-items: center;
   padding: 0;
 }
-.sectionQuinta .parteA .botao button{
+
+.sectionQuinta .parteA .botao button {
   width: 30%;
   height: 3.5vmax;
   background-color: var(--clr);
@@ -724,11 +737,13 @@ nav .cad a {
   font-size: 1.1em;
   outline: none;
 }
-.sectionQuinta .parteA .botao button:hover{
+
+.sectionQuinta .parteA .botao button:hover {
   background-color: transparent;
   color: var(--clr);
 }
-.sectionQuinta .parteA .botao button:focus{
+
+.sectionQuinta .parteA .botao button:focus {
   transform: translateY(-5px);
   background-color: transparent;
   color: var(--clr);
@@ -742,7 +757,7 @@ nav .cad a {
 
 
 /* Footer */
-footer{
+footer {
   width: 100%;
   height: 4vmax;
   background-color: var(--clr);
@@ -750,7 +765,8 @@ footer{
   justify-content: center;
   align-items: center;
 }
-footer p{
+
+footer p {
   color: #f5f5f5;
   font-family: var(--messi);
 }

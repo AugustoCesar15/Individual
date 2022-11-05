@@ -21,8 +21,47 @@
 </head>
 
 <body>
+    <!-- Nav Responsiva -->
+    <div class="navBar" id="novaNav">
+        <button>
+            <span class="material-symbols-outlined" onclick="fecharEscondidaNova()">
+                close
+            </span>
+        </button>
+        <div class="links">
+            <ul>
+                <li><a href="#">Quiz</a></li>
+            </ul>
+        </div>
+
+        <!--PROTOCOLO ENEL - 2254638848 -->
+        <div class="registro">
+            <ul>
+                <li><a href="./login.html">Entrar</a></li>
+                <li class="cad"><a href="./cadastro.html">Cadastrar</a></li>
+            </ul>
+        </div>
+        <div class="links a">
+            <ul>
+                <li><a href="./curiosidades.html">Curiosidades</a></li>
+            </ul>
+        </div>
+    </div>
+
     <!-- NavBar -->
     <nav id="navTopo">
+        <div class="temazin">
+            <button>
+                <span class="material-symbols-outlined" onclick="menuEscondidaNova()">
+                    menu
+                </span>
+            </button>
+        </div>
+
+        <div class="logo">
+            <a href="./index.html" class="h1 joao" id="titulo-nav">The Bible </a>
+        </div>
+        
         <div class="temazin">
             <button>
                 <span class="material-symbols-outlined" onclick="mudarTema()" id="button-tema">
@@ -30,57 +69,14 @@
                 </span>
             </button>
         </div>
-        <div class="links a">
-            <ul>
-                <li><a href="./curiosidades.html">Curiosidades</a></li>
-            </ul>
-        </div>
-        <div class="logo">
-            <a href="./index.html" class="h1" id="titulo-nav">The Bible </a>
-        </div>
-        <div class="links">
-            <ul>
-                <li><a href="#">Quiz</a></li>
-            </ul>
-        </div>
-        <div class="registro">
-            <ul>
-                <li><a href="./login.html">Entrar</a></li>
-                <li class="cad"><a href="./cadastro.html">Cadastrar</a></li>
-            </ul>
-        </div>
     </nav>
-    <!-- Nav Responsiva -->
-    <div class="navBar">
-        <div class="logo">
-            <h1>The Bible</h1>
-        </div>
-        <div class="menu">
-            <button>
-                <span class="material-symbols-outlined" onclick="mudarTema()" id="button-tema">
-                    settings_brightness
-                </span>
-            </button>
-            <button>
-                <span class="material-symbols-outlined" onclick="menuEscondida()">
-                    menu
-                </span>
-            </button>
-        </div>
-        <div class="escondida" id="div-escondida">
-            <button class="menosEsse">
-                <span class="material-symbols-outlined" onclick="sumirEscondida()">
-                    close
-                </span>
-            </button>
-            <ul>
-                <li><a href="./curiosidades.html">Curiosidades</a></li>
-                <li><a href="">Quiz</a></li>
-                <li><a href="./login.html">Login</a></li>
-                <li class="cad"><a href="./cadastro.html">Cadastrar</a></li>
-            </ul>
-        </div>
-    </div>
+
+
+
+
+
+
+
 
     <!-- Section Principal - Possivel carousel -->
     <section class="sectionPrincipal">
@@ -202,7 +198,8 @@
                 <h2>Faça parte de nossa comunidade!</h2>
             </div>
             <div class="texto">
-                <p>Além de aprender mais sobre as escrituras, você também pode ensinar, compartilhando aqui que você sabe!
+                <p>Além de aprender mais sobre as escrituras, você também pode ensinar, compartilhando aqui que você
+                    sabe!
                 </p>
             </div>
             <div class="botoes">
@@ -219,7 +216,8 @@
             </div>
             <div class="texto">
                 <p>Conheça o nosso Quiz bíblico, onde você aprede sobre as escrituras jogando!
-                Existe alguma forma melhor que aprender algo se não for divertido? Então não perca tempo! Junte-se com seus amigos e familiares e venham se divertir!</p>
+                    Existe alguma forma melhor que aprender algo se não for divertido? Então não perca tempo! Junte-se
+                    com seus amigos e familiares e venham se divertir!</p>
             </div>
             <div class="botao">
                 <button>Jogar!</button>
@@ -237,7 +235,31 @@
     </footer>
 
 </body>
+
 </html>
+
+<script>
+    var numBarra = 1
+    var barra = document.getElementById('novaNav').style
+    function menuEscondidaNova() {
+        if (numBarra == 1) {
+
+            barra.left = "0"
+
+            numBarra++
+        }
+    }
+
+    function fecharEscondidaNova() {
+        if (numBarra = 1) {
+            barra.left = "-100%"
+
+            numBarra = 1
+        }
+    }
+</script>
+
+
 
 <!-- Mudar Tema -->
 <script>
@@ -347,14 +369,14 @@
             reset: true,
         }
     );
-    
+
     ScrollReveal().reveal('.reveal3',
         {
             duration: 3300,
             reset: true
         }
     );
-    
+
     ScrollReveal().reveal('.joao',
         {
             distance: '300px',

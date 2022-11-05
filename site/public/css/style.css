@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=El+Messiri&family=Great+Vibes&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
 
 
 :root {
@@ -17,7 +17,6 @@
 
 ::-webkit-scrollbar-thumb {
   background-color: var(--clr);
-  border-radius: 30px;
 }
 
 * {
@@ -275,73 +274,174 @@ nav .cad a {
 
 
 
+
+
+
+
+
+
+
+
+
 /* Sectio Inicial - Carousel */
 .sectionPrincipal {
   width: 100%;
-  height: 38.78vmax;
+  height: 70vmax;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #b1b1b1;
+  padding-top: 50px;
+}
+
+.sectionPrincipal .versiculosHome {
+  width: 75%;
+  height: 35vmax;
+  /* background-image: url();
+    background-size: cover;
+    background-position: center; */
+  background-color: #fff;
+  border-radius: 20px;
+}
+
+.sectionSegunda {
+  width: 100%;
+  height: 50vmax;
+  background-color: var(--clr);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sectionSegunda .sobre {
+  width: 70%;
+  height: 30vmax;
+  border-radius: 80px 0 80px 0;
+  position: absolute;
+  top: 60vmax;
+  background-color: #383838;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.sectionSegunda .sobre .caixa {
+  width: 30%;
+  height: 14vmax;
+  /* background-color: #e3b0625f; */
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+}
+
+.sectionSegunda .sobre .caixa span {
+  color: var(--clr);
+  font-size: 3em;
+}
+
+.sectionSegunda .sobre .caixa p {
+  color: #f5f5f5;
+  font-family: var(--messi);
+  font-weight: normal;
+  text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+
+.sectionSegunda .mensagem {
+  width: 100%;
+  height: 14vmax;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sectionSegunda .mensagem h2 {
+  font-size: 3em;
+  font-weight: normal;
+  font-family: 'Dancing Script';
+  color: #f5f5f5;
+}
+
+.sectionTerceira {
+  width: 100%;
+  height: 30vmax;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: transparent;
+}
+
+.sectionTerceira .cards {
+  width: 80%;
+  height: 25vmax;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+}
+
+.sectionTerceira .card {
+  width: 30%;
+  height: 25vmax;
+  border-radius: 15px;
+  background-color: #383838;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: #b1b1b1;
 }
 
-.sectionPrincipal img {
-  width: 100%;
-  height: 38.78vmax;
-  object-fit: cover;
-  opacity: 0.9;
-  /* mix-blend-mode: color-burn; */
+.sectionTerceira .card img {
   position: absolute;
-  z-index: 1;
+  top: 120vmax;
+  background-color: #32b9cd5f;
+  width: 22%;
+  height: 15vmax;
+  border-radius: 20px 20px 0 0;
 }
 
-.sectionPrincipal .textoSec {
-  position: relative;
-  z-index: 2;
-  width: 80%;
-  height: 20vmax;
+.sectionTerceira .card img::before {
+  content: '';
+  width: 100%;
+  height: 30px;
+  background-image: linear-gradient(to top, #383838, transparent);
+  position: absolute;
+  bottom: 0;
+}
+
+.sectionTerceira .card .titulo {
+  width: 100%;
+  height: 50%;
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  /* background-color: red; */
-  padding-bottom: 150px;
+  align-items: flex-end;
 }
 
-.sectionPrincipal h2 {
-  color: #f5f5f5;
-  font-size: 3em;
-  font-family: var(--vibes);
+.sectionTerceira .card .textos {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sectionTerceira .card h3 {
+  color: var(--clr);
+  font-family: 'Dancing Script';
   font-weight: normal;
-  padding-bottom: 30px;
-  animation: h2section 2s infinite alternate;
+  font-size: 2em;
 }
 
-@keyframes h2section {
-  0%{
-    color: #f5f5f5;
-  } 100%{
-    color: transparent;
-  }
-}
-
-
-.sectionPrincipal p {
+.sectionTerceira .card p {
   color: #f5f5f5;
-  font-size: 2.5em;
   font-family: var(--messi);
   text-align: center;
-  text-shadow: 3px 3px 30px yellowgreen;
 }
-
-
-
-
-
-
-
-
-
 
 
 

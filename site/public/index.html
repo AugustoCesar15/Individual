@@ -17,6 +17,7 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
+    <script src="https://unpkg.com/scrollreveal"></script>
 </head>
 
 <body>
@@ -93,37 +94,37 @@
 
 
     <section class="sectionSegunda">
-        <div class="sobre">
+        <div class="sobre reveal1" id="caixa">
             <div class="caixa">
                 <span class="material-symbols-outlined">
                     import_contacts
                 </span>
-                <p>A Bíblia é o livro mais <br>vendido do mundo com mais <br> de 5 bilhões de cópias.</p>
+                <p id="info-1">A Bíblia é o livro mais <br>vendido do mundo com mais <br> de 5 bilhões de cópias.</p>
             </div>
             <div class="caixa">
                 <span class="material-symbols-outlined">
                     translate
                 </span>
-                <p>Traduzida em mais <br> de 700 idiomas</p>
+                <p id="info-2">Traduzida em mais <br> de 700 idiomas</p>
             </div>
             <div class="caixa">
                 <span class="material-symbols-outlined">
                     groups
                 </span>
-                <p>Escrita por 40 autores <br>diferentes, em épocas
+                <p id="info-3">Escrita por 40 autores <br>diferentes, em épocas
                     diferentes e <br> em contextos diferentes. </p>
             </div>
             <div class="caixa">
                 <span class="material-symbols-outlined">
                     format_list_numbered
                 </span>
-                <p>A Bíblia completa <br>Possuí 1189 Capítulos.</p>
+                <p id="info-4">A Bíblia completa <br>Possuí 1189 Capítulos.</p>
             </div>
             <div class="caixa">
                 <span class="material-symbols-outlined">
                     book
                 </span>
-                <p>Ao todo são 66 livros sendo<br>divididos em dois testamentos, <br> 39 capítulos no primeiro e 27 no
+                <p id="info-5">Ao todo são 66 livros sendo<br>divididos em dois testamentos, <br> 39 capítulos no primeiro e 27 no
                     segundo.</p>
             </div>
         </div>
@@ -135,38 +136,55 @@
     <section class="sectionTerceira">
         <!-- https://www.searanews.com.br/as-cortinas-do-tabernaculo/ -->
         <div class="cards">
-            <div class="card"><img src="./assets/imgs/cortinas.jpg" alt="">
+            <div class="card reveal1" id="card-um"><img src="./assets/imgs/cortinas.jpg" alt="">
                 <div class="titulo">
                     <h3>As cortinas do tabernáculo</h3>
                 </div>
                 <div class="textos">
-                    <p>Você sabia que o tabernáculo possuí 4 cortinas, que têm como funcão o revestimento do tabernaculo, e cada uma delas possuem caracteriscas únicas de Cristo. <a href="#">Saiba mais</a></p> 
+                    <p  id="text-card-um">Você sabia que o tabernáculo possuí 4 cortinas, que têm como funcão o revestimento do
+                        tabernaculo, e cada uma delas possuem caracteriscas únicas de Cristo. <a href="#">Saiba mais</a>
+                    </p>
                 </div>
             </div>
 
             <!-- https://www.estudosgospel.com.br/estudo-biblico-evangelico-diversos/as-tres-portas-do-tabernaculo.html -->
-            <div class="card"><img src="./assets/imgs/porta.jpg" alt="">
+            <div class="card reveal2" id="card-dois"><img src="./assets/imgs/porta.jpg" alt="">
                 <div class="titulo">
                     <h3>As entradas do tabernáculo</h3>
                 </div>
                 <div class="textos">
-                    <p>
-                        Sim, cada parte do tabernáculo possuí um significado importante que apontam a Jesus, e as portas do tabernáculo são mais um exemplo disso. <a href="#">Saiba mais</a>
+                    <p id="text-card-dois">
+                        Sim, cada parte do tabernáculo possuí um significado importante que apontam a Jesus, e as portas
+                        do tabernáculo são mais um exemplo disso. <a href="#">Saiba mais</a>
                     </p>
                 </div>
             </div>
 
-            <div class="card"><img src="./assets/imgs/book.jpg" alt="" >
+            <div class="card reveal3" id="card-tres"><img src="./assets/imgs/book.jpg" alt="">
                 <div class="titulo">
                     <h3>Qual seu principal idioma?</h3>
                 </div>
                 <div class="textos">
-                    <p>
-                        A biblia foi escrita em 3 idiomas sendo Hebraico, Aramaico e Grego. E como o português possuí muito mais palavras, algumas palavras do original acabam tendo mias de um significado. <a href="#">Saiba mais</a>
+                    <p id="text-card-tres">
+                        A biblia foi escrita em 3 idiomas sendo Hebraico, Aramaico e Grego. E como o português possuí
+                        muito mais palavras, algumas palavras do original acabam tendo mias de um significado. <a href="#">Saiba mais</a>
                     </p>
                 </div>
             </div>
         </div>
+        <div class="direcionamento">
+            <div class="texto reveal2">
+                <p id="text-existem">Existem ainda milhares de curiosidades que percorrem os 66 livros que compôem a biblia! Conheça algumas delas e se souber de alguma compartilhe conosco! </p>
+                <span class="material-symbols-outlined" id="span-existem">
+                    south
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <section class="sectionQuarta">
+        <div class="partea"></div>
+        <div class="parteb"></div>
     </section>
 </body>
 
@@ -179,17 +197,60 @@
         var btn = document.getElementById('button-tema')
         var body = document.body.style
         var h1 = document.getElementById('titulo-nav').style
+        var txt3 = document.getElementById('text-existem').style
+        var spn3 = document.getElementById('span-existem').style
+        var card1 = document.getElementById('card-um').style
+        var card2 = document.getElementById('card-dois').style
+        var card3 = document.getElementById('card-tres').style
+        var textcard1 = document.getElementById('text-card-um').style
+        var textcard2 = document.getElementById('text-card-dois').style
+        var textcard3 = document.getElementById('text-card-tres').style
+        var caixa = document.getElementById('caixa').style
+        var txtInfo1 = document.getElementById('info-1').style
+        var txtInfo2 = document.getElementById('info-2').style
+        var txtInfo3 = document.getElementById('info-3').style
+        var txtInfo4 = document.getElementById('info-4').style
+        var txtInfo5 = document.getElementById('info-5').style
 
         if (numTema == 1) {
             body.backgroundColor = "#383838"
             btn.style.transform = "rotate(540deg)"
             h1.color = "#f5f5f5"
+            txt3.color = "#f5f5f5"
+            spn3.color = "#f5f5f5"
+            card1.backgroundColor = "#d5d5d5"
+            card2.backgroundColor = "#d5d5d5"
+            card3.backgroundColor = "#d5d5d5"
+            textcard1.color = "#383838"
+            textcard2.color = "#383838"
+            textcard3.color = "#383838"
+            caixa.backgroundColor = "#383838"
+            txtInfo1.color = "#f5f5f5"
+            txtInfo2.color = "#f5f5f5"
+            txtInfo3.color = "#f5f5f5"
+            txtInfo4.color = "#f5f5f5"
+            txtInfo5.color = "#f5f5f5"
 
             numTema++
         } else {
             body.backgroundColor = "#f5f5f5"
             btn.style.transform = "rotate(0deg)"
             h1.color = "#383838"
+            txt3.color = "#383838"
+            spn3.color = "#383838"
+            card1.backgroundColor = "#383838"
+            card2.backgroundColor = "#383838"
+            card3.backgroundColor = "#383838"
+            textcard1.color = "#f5f5f5"
+            textcard2.color = "#f5f5f5"
+            textcard3.color = "#f5f5f5"
+            caixa.backgroundColor = "#f5f5f5"
+            txtInfo1.color = "#383838"
+            txtInfo2.color = "#383838"
+            txtInfo3.color = "#383838"
+            txtInfo4.color = "#383838"
+            txtInfo5.color = "#383838"
+
 
             numTema = 1
         }
@@ -219,6 +280,14 @@
             numBar = 1
         }
     }
+</script>
+
+<!-- Scroll Reveal -->
+<script>
+    ScrollReveal().reveal('.reveal1', {duration: 900, reset: true, left: 0});
+    ScrollReveal().reveal('.reveal2', {duration: 2300, reset: true, left: 0});
+    ScrollReveal().reveal('.reveal3', {duration: 3300, reset: true, left: 0});
+
 </script>
 
 <!-- Carousel -->

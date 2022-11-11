@@ -25,10 +25,12 @@
   padding: 0;
   box-sizing: border-box;
   transition: var(--trans);
+  scroll-behavior: smooth;
 }
 
 body {
   background-color: #f5f5f5;
+  overflow-x: hidden;
 }
 
 nav {
@@ -279,7 +281,32 @@ nav .cad a {
 
 
 
+.botaoSubir{
+  background-color: transparent;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 40vmax;
+  left: 95%;
+}
 
+.botaoSubir span{
+  font-size: 2.5em;
+  color: #161618;
+  animation: setaup 0.8s infinite alternate-reverse;
+}
+
+@keyframes setaup{
+  from{
+    transform: translateY(0);
+  }
+  to{
+    transform: translateY(-5px);
+  }
+}
 
 
 
@@ -298,10 +325,9 @@ nav .cad a {
   padding-top: 35px;
 }
 
-.sectionPrincipal .versiculosHome {
+.sectionPrincipal .versiculosHome1, .versiculosHome2, .versiculosHome3, .versiculosHome4 {
   width: 75%;
   height: 35vmax;
-  background-image: url('./../assets/imgs/fire-g15b6a6c52_1280.jpg');
   background-size: cover;
   background-position: center;
   border-radius: 20px;
@@ -309,6 +335,22 @@ nav .cad a {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+.sectionPrincipal .versiculosHome1{
+  background-image: url('./../assets/imgs/1.png');
+}
+
+.sectionPrincipal .versiculosHome2{
+  background-image: url('./../assets/imgs/2.png');
+}
+
+.sectionPrincipal .versiculosHome3{
+  background-image: url('./../assets/imgs/3.png');
+}
+
+.sectionPrincipal .versiculosHome4{
+  background-image: url('./../assets/imgs/4.png');
 }
 
 .sectionPrincipal .versiculosHome h2 {
@@ -635,13 +677,87 @@ nav .cad a {
   transform: scaleX(-1);
 }
 
-.sectionQuinta .parteA{
-  
+.sectionQuinta .parteA .titulo{
+  width: 85%;
+  height: 30%;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+}
+
+.sectionQuinta .parteA .titulo h2{
+  color: #383838;
+  font-family: var(--vibes);
+  font-weight: normal;
+  font-size: 3.4em;
+  line-height: 45px;
+}
+
+.sectionQuinta .parteA .texto{
+  width: 70%;
+  height: 50%;
+  display: flex;
+  align-items: flex-end;
+  /* background-color: #e3b062; */
+}
+
+.sectionQuinta .parteA .texto p{
+  color: var(--clr);
+  font-family: 'Ubuntu';
+  font-size: 1.5em;
+  font-weight: 100;
+}
+
+.sectionQuinta .parteA .botao {
+  width: 70%;
+  height: 30%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0;
+}
+.sectionQuinta .parteA .botao button{
+  width: 30%;
+  height: 3.5vmax;
+  background-color: var(--clr);
+  border: 2px var(--clr) solid;
+  border-radius: 10px;
+  color: #f5f5f5;
+  font-family: var(--messi);
+  font-size: 1.1em;
+  outline: none;
+}
+
+.sectionQuinta .parteA .botao button:hover{
+  background-color: transparent;
+  color: var(--clr);
+}
+
+.sectionQuinta .parteA .botao button:focus{
+  transform: translateY(-5px);
+  background-color: transparent;
+  color: var(--clr);
 }
 
 
 
 
+
+
+/* Footer */
+footer{
+  width: 100%;
+  height: 4vmax;
+  background-color: var(--clr);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer p{
+  color: #f5f5f5;
+  font-family: var(--messi);
+}
 
 
 

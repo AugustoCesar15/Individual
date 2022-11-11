@@ -22,7 +22,7 @@
 
 <body>
     <!-- NavBar -->
-    <nav>
+    <nav id="navTopo">
         <div class="temazin">
             <button>
                 <span class="material-symbols-outlined" onclick="mudarTema()" id="button-tema">
@@ -84,13 +84,20 @@
 
     <!-- Section Principal - Possivel carousel -->
     <section class="sectionPrincipal">
-        <div class="versiculosHome mySlides">
-            <h2>Levitico 6:13</h2>
-            <p>O fogo arderá continuamente no altar; <br>
-                Não se apagará.
-            </p>
-        </div>
+        <!-- Tamanho das fotos 1013 x 480  -->
+        <div class="versiculosHome1 mySlides"></div>
+        <div class="versiculosHome2 mySlides"></div>
+        <div class="versiculosHome3 mySlides"></div>
+        <div class="versiculosHome4 mySlides"></div>
     </section>
+
+    <div class="botaoSubir">
+        <a href="#navTopo">
+            <span class="material-symbols-outlined">
+                north
+            </span>
+        </a>
+    </div>
 
     <section class="sectionSegunda">
         <div class="sobre reveal1" id="caixa">
@@ -129,14 +136,15 @@
             </div>
         </div>
         <div class="mensagem">
-            <h2>João 8:32 - E conhecereis a verdade, e a verdade vos libertará.</h2>
+            <h2 class="joao">João 8:32 - E conhecereis a verdade, e a verdade vos libertará.</h2>
         </div>
     </section>
 
     <section class="sectionTerceira">
         <!-- https://www.searanews.com.br/as-cortinas-do-tabernaculo/ -->
         <div class="cards">
-            <div class="card reveal1" id="card-um"><img src="./assets/imgs/cortinas.jpg" alt="">
+            <div class="card reveal1" id="card-um">
+                <img src="./assets/imgs/cortinas.jpg" alt="">
                 <div class="titulo">
                     <h3>As cortinas do tabernáculo</h3>
                 </div>
@@ -186,7 +194,7 @@
     </section>
 
     <section class="sectionQuarta">
-        <div class="partea">
+        <div class="partea joao">
             <img src="./assets/Sign up-bro.svg">
         </div>
         <div class="parteb">
@@ -194,7 +202,7 @@
                 <h2>Faça parte de nossa comunidade!</h2>
             </div>
             <div class="texto">
-                <p>Aqui além de aprender mais sobre as escrituras, você também ensina compartilhando o que você sabe!
+                <p>Além de aprender mais sobre as escrituras, você também pode ensinar, compartilhando aqui que você sabe!
                 </p>
             </div>
             <div class="botoes">
@@ -207,18 +215,28 @@
     <section class="sectionQuinta">
         <div class="parteA">
             <div class="titulo">
-                <h2>Desafie seu conhecimento nas escrituras</h2>
+                <h2 id="titulo-quinta">Desafie seu conhecimento nas escrituras</h2>
             </div>
             <div class="texto">
-                <p>Com três níveis de dificuldade</p>
+                <p>Conheça o nosso Quiz bíblico, onde você aprede sobre as escrituras jogando!
+                Existe alguma forma melhor que aprender algo se não for divertido? Então não perca tempo! Junte-se com seus amigos e familiares e venham se divertir!</p>
+            </div>
+            <div class="botao">
+                <button>Jogar!</button>
             </div>
         </div>
-        <div class="parteB">
+        <div class="parteB pedro">
             <img src="./assets/Winners-amico.svg" alt="">
         </div>
     </section>
-</body>
 
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&COPY;ACRC Desenvolvimento de Sistemas - The Bible 2022 - v.0.0.1</p>
+    </footer>
+
+</body>
 </html>
 
 <!-- Mudar Tema -->
@@ -242,6 +260,7 @@
         var txtInfo3 = document.getElementById('info-3').style
         var txtInfo4 = document.getElementById('info-4').style
         var txtInfo5 = document.getElementById('info-5').style
+        var tituloQuinta = document.getElementById('titulo-quinta').style
 
         if (numTema == 1) {
             body.backgroundColor = "#383838"
@@ -261,6 +280,7 @@
             txtInfo3.color = "#f5f5f5"
             txtInfo4.color = "#f5f5f5"
             txtInfo5.color = "#f5f5f5"
+            tituloQuinta.color = "#f5f5f5"
 
             numTema++
         } else {
@@ -281,7 +301,7 @@
             txtInfo3.color = "#383838"
             txtInfo4.color = "#383838"
             txtInfo5.color = "#383838"
-
+            tituloQuinta.color = "#383838"
 
             numTema = 1
         }
@@ -315,31 +335,59 @@
 
 <!-- Scroll Reveal -->
 <script>
-    ScrollReveal().reveal('.reveal1', { duration: 900, reset: true });
-    ScrollReveal().reveal('.reveal2', { duration: 2300, reset: true });
-    ScrollReveal().reveal('.reveal3', { duration: 3300, reset: true });
+    ScrollReveal().reveal('.reveal1',
+        {
+            duration: 900,
+            reset: true
+        }
+    );
+    ScrollReveal().reveal('.reveal2',
+        {
+            duration: 2300,
+            reset: true,
+        }
+    );
+    
+    ScrollReveal().reveal('.reveal3',
+        {
+            duration: 3300,
+            reset: true
+        }
+    );
+    
+    ScrollReveal().reveal('.joao',
+        {
+            distance: '300px',
+            duration: 1200,
+            reset: true,
+            origin: 'right'
+        }
+    );
 
+    ScrollReveal().reveal('.pedro',
+        {
+            distance: '300px',
+            duration: 1200,
+            reset: true,
+            origin: 'left'
+        }
+    );
 </script>
 
 <!-- Carousel -->
-<!-- <script>
+<script>
     let slideIndex = 0;
     showSlides();
 
     function showSlides() {
         let i;
         let slides = document.getElementsByClassName("mySlides");
-        // let dots = document.getElementsByClassName("dot");
         for (i = 0; i < slides.length; i++) {
             slides[i].style.display = "none";
         }
         slideIndex++;
         if (slideIndex > slides.length) { slideIndex = 1 }
-        for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");
-        }
-        slides[slideIndex - 1].style.display = "block";
-        dots[slideIndex - 1].className += " active";
-        setTimeout(showSlides, 2000); // Change image every 2 seconds
+        slides[slideIndex - 1].style.display = "flex";
+        setTimeout(showSlides, 5000); // Change image every 2 seconds
     }
-</script>  -->
+</script>

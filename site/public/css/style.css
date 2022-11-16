@@ -10,12 +10,13 @@
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
-  background-color: #bb38389f;
+  width: 6px;
+  background-color: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
   background-color: var(--clr);
+  border-radius: 40px;
 }
 
 * {
@@ -60,6 +61,7 @@ nav .temazin button {
   border: none;
   outline: none;
 }
+
 /* 
 nav .temazin button:focus {
   transform: translateY(-5px);
@@ -68,7 +70,9 @@ nav .temazin button:focus {
 nav .temazin button span {
   color: var(--clr);
   font-size: 2.5em;
+  cursor: pointer;
 }
+
 nav .logo {
   width: 20%;
   height: var(--navHei);
@@ -76,6 +80,7 @@ nav .logo {
   justify-content: center;
   align-items: center;
 }
+
 nav .logo .h1 {
   font-size: 2.8em;
   font-family: var(--vibes);
@@ -84,6 +89,7 @@ nav .logo .h1 {
   position: absolute;
   text-decoration: none;
 }
+
 nav .logo .h1:hover {
   position: absolute;
   letter-spacing: 5px;
@@ -95,25 +101,7 @@ nav .logo .h1:hover {
 
 
 
-.aqui {
-  border-bottom: 2px solid var(--clr);
-}
-
-
-
 /* Nav Responsiva */
-:root {
-  --RnavHei: 50px;
-}
-
-
-
-
-
-
-
-
-
 .navBar {
   width: 25%;
   height: 100vh;
@@ -126,121 +114,113 @@ nav .logo .h1:hover {
   align-items: center;
   flex-direction: column;
   background-color: #f5f5f5;
+  transition: all 0.5s;
 }
 
-.navBar .logo {
-  width: 40%;
-  height: var(--RnavHei);
+.navBar .fechar {
+  width: 90%;
+  height: 20%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.navBar .fechar button {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: transparent;
+  border: none;
+  outline: none;
 }
 
-.navBar .logo h1 {
-  font-size: 1.8em;
-  font-family: var(--vibes);
-  color: #383838;
-  font-weight: normal;
-  position: absolute;
-}
-
-.navBar .logo h1:hover {
-  position: absolute;
-  letter-spacing: 5px;
+.navBar .fechar button span {
+  font-size: 2.5em;
+  color: var(--clr);
   cursor: pointer;
 }
 
-.navBar .menu {
-  width: 60%;
-  height: var(--RnavHei);
+.navBar .links {
+  width: 90%;
+  height: 70%;
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-
-.navBar button {
-  width: 20%;
-  height: var(--RnavHei);
-  display: flex;
+  align-items: flex-start;
   justify-content: center;
-  align-items: center;
-  border: none;
-  background-color: transparent;
 }
 
-.navBar button span {
-  color: var(--clr);
-  font-size: 1.8em;
-}
-
-.navBar .menosEsse {
-  position: absolute;
-  top: 3px;
-  left: 6px;
-}
-
-.navBar .escondida {
-  width: 30%;
-  height: 250px;
+.navBar .links ul {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 30px 0px 0 30px;
-  background-color: #383838;
-  position: absolute;
-  top: -500%;
-  right: 0;
-  z-index: 100;
-}
-
-.navBar ul {
-  height: var(--RnavHei);
-  display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
-}
-
-.navBar ul li {
+  justify-content: center;
+  align-items: center;
   list-style: none;
-  margin: 10px 0px;
 }
 
+.navBar .links ul li {
+  margin: 10px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-.navBar ul li a {
-  text-decoration: none;
-  font-family: var(--messi);
+.navBar .links ul li a {
+  font-size: 1.3em;
   color: var(--clr);
-  font-size: 0.9em;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  font-family: var(--messi);
+  cursor: pointer;
 }
 
-.navBar ul li:hover {
-  transform: translateY(-10px);
+.navBar .links .aqui {
+  pointer-events: none;
+  opacity: 0.4;
+  transition: all 0.4s;
 }
 
-.navBar .cad {
-  padding: 7px;
-  border-radius: 20px;
+.navBar .links .curi {
+  margin-top: 50%;
+}
+
+.navBar .links .curi::after {
+  content: '';
+  width: 70%;
+  height: 1px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 53.5%;
   background-color: var(--clr);
+  animation: vaivolta 2s infinite alternate;
 }
 
-.navBar .cad:hover {
-  transform: scale(1.1);
+@keyframes vaivolta {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 70%;
+  }
 }
 
-.navBar .cad a {
+.navBar .links .cad {
+  width: 100%;
+  height: 50px;
+  background-color: var(--clr);
+  padding: 20px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.navBar .links .cad a {
   color: #f5f5f5;
 }
 
-@media only screen and (max-width: 900px) {
-  nav {
-    display: none;
-  }
 
-  .navBar {
-    display: flex;
-  }
-}
+
+
+
 
 
 
@@ -253,7 +233,7 @@ nav .logo .h1:hover {
   justify-content: center;
   align-items: center;
   position: sticky;
-  top: 80%;
+  top: 88%;
   left: 95%;
 }
 
@@ -261,6 +241,7 @@ nav .logo .h1:hover {
   font-size: 2.5em;
   color: #161618;
   animation: setaup 0.8s infinite alternate-reverse;
+  cursor: pointer;
 }
 
 @keyframes setaup {
@@ -363,7 +344,7 @@ nav .logo .h1:hover {
   height: 30vmax;
   border-radius: 80px 0 80px 0;
   position: absolute;
-  top: 60vmax;
+  top: 65vmax;
   background-color: #f5f5f5;
   display: flex;
   justify-content: space-evenly;
@@ -518,6 +499,8 @@ nav .logo .h1:hover {
   color: #b1b1b1;
   margin-left: 10%;
   outline: none;
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 .sectionTerceira .card a:focus {
@@ -726,6 +709,7 @@ nav .logo .h1:hover {
   padding: 0;
 }
 
+
 .sectionQuinta .parteA .botao button {
   width: 30%;
   height: 3.5vmax;
@@ -751,6 +735,78 @@ nav .logo .h1:hover {
 
 
 
+
+
+
+
+
+
+
+
+
+
+/* CURIOSIDADES */
+.curiosidades {
+  width: 80%;
+  height: auto;
+  display: none;
+  /* overflow-y: auto; */
+  margin: 0 auto;
+}
+
+.curiosidades .container {
+  width: 80%;
+  height: 20vmax;
+  margin: 30px auto;
+  background-color: var(--clr);
+  border-radius: 70px 0 70px 0;
+  box-shadow: 10px 10px 30px #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.curiosidades .container .texto{
+  position: absolute;
+  z-index: -1;
+  width: 60%;
+  height: 15vmax;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.curiosidades .container .texto h2{
+  font-size: 4em;
+  color: #161618;
+  font-family: var(--vibes);
+  font-weight: normal;
+}
+
+.curiosidades .container .conteudo {
+  width: 100%;
+  height: 20vmax;
+  margin: 30px auto;
+  background-color: rgba(17, 17, 17, 0.974);
+  opacity: 0.00005  ;
+  border-radius: 70px 0 70px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.curiosidades .container .conteudo:hover {
+  opacity: 1;
+}
+
+.curiosidades .container:nth-last-child(2) {
+  background-image: url('./../assets/imgs/oatrio-776x310.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  mix-blend-mode: darken;
+}
 
 
 

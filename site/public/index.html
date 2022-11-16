@@ -23,29 +23,23 @@
 <body>
     <!-- Nav Responsiva -->
     <div class="navBar" id="novaNav">
-        <button>
-            <span class="material-symbols-outlined" onclick="fecharEscondidaNova()">
-                close
-            </span>
-        </button>
+        <div class="fechar">
+            <button>
+                <span class="material-symbols-outlined" onclick="fecharEscondidaNova()">
+                    close
+                </span>
+            </button>
+        </div>
         <div class="links">
             <ul>
-                <li><a href="#">Quiz</a></li>
+                <li><a onclick="ParaInicial()" class="aqui" id="um-link">Página Inicial</a></li>
+                <li id="dois-link"><a onclick="curiosidade()">Curiosidades</a>
+                </li>
+                <li class="curi"><a href="">Login</a></li>
+                <li class="cad"><a href="">Cadastre-se</a></li>
             </ul>
         </div>
 
-        <!--PROTOCOLO ENEL - 2254638848 -->
-        <div class="registro">
-            <ul>
-                <li><a href="./login.html">Entrar</a></li>
-                <li class="cad"><a href="./cadastro.html">Cadastrar</a></li>
-            </ul>
-        </div>
-        <div class="links a">
-            <ul>
-                <li><a href="./curiosidades.html">Curiosidades</a></li>
-            </ul>
-        </div>
     </div>
 
     <!-- NavBar -->
@@ -61,7 +55,7 @@
         <div class="logo">
             <a href="./index.html" class="h1 joao" id="titulo-nav">The Bible </a>
         </div>
-        
+
         <div class="temazin">
             <button>
                 <span class="material-symbols-outlined" onclick="mudarTema()" id="button-tema">
@@ -75,159 +69,189 @@
 
 
 
+    <div class="principal" id="div-principal">
+        <!-- Section Principal - Possivel carousel -->
+        <section class="sectionPrincipal">
+            <!-- Tamanho das fotos 1013 x 480  -->
+            <div class="versiculosHome1 mySlides"></div>
+            <div class="versiculosHome2 mySlides"></div>
+            <div class="versiculosHome3 mySlides"></div>
+            <div class="versiculosHome4 mySlides"></div>
+        </section>
 
+        <div class="botaoSubir">
+            <a href="#navTopo">
+                <span class="material-symbols-outlined">
+                    north
+                </span>
+            </a>
+        </div>
 
+        <section class="sectionSegunda">
+            <div class="sobre reveal1" id="caixa">
+                <div class="caixa">
+                    <span class="material-symbols-outlined">
+                        import_contacts
+                    </span>
+                    <p id="info-1">A Bíblia é o livro mais <br>vendido do mundo com mais <br> de 5 bilhões de cópias.
+                    </p>
+                </div>
+                <div class="caixa">
+                    <span class="material-symbols-outlined">
+                        translate
+                    </span>
+                    <p id="info-2">Traduzida em mais <br> de 700 idiomas</p>
+                </div>
+                <div class="caixa">
+                    <span class="material-symbols-outlined">
+                        groups
+                    </span>
+                    <p id="info-3">Escrita por 40 autores <br>diferentes, em épocas
+                        diferentes e <br> em contextos diferentes. </p>
+                </div>
+                <div class="caixa">
+                    <span class="material-symbols-outlined">
+                        format_list_numbered
+                    </span>
+                    <p id="info-4">A Bíblia completa <br>Possuí 1189 Capítulos.</p>
+                </div>
+                <div class="caixa">
+                    <span class="material-symbols-outlined">
+                        book
+                    </span>
+                    <p id="info-5">Ao todo são 66 livros sendo<br>divididos em dois testamentos, <br> 39 capítulos no
+                        primeiro e 27 no
+                        segundo.</p>
+                </div>
+            </div>
+            <div class="mensagem">
+                <h2 class="joao">João 8:32 - E conhecereis a verdade, e a verdade vos libertará.</h2>
+            </div>
+        </section>
 
-    <!-- Section Principal - Possivel carousel -->
-    <section class="sectionPrincipal">
-        <!-- Tamanho das fotos 1013 x 480  -->
-        <div class="versiculosHome1 mySlides"></div>
-        <div class="versiculosHome2 mySlides"></div>
-        <div class="versiculosHome3 mySlides"></div>
-        <div class="versiculosHome4 mySlides"></div>
-    </section>
+        <section class="sectionTerceira">
+            <!-- https://www.searanews.com.br/as-cortinas-do-tabernaculo/ -->
+            <div class="cards">
+                <div class="card reveal1" id="card-um">
+                    <img src="./assets/imgs/cortinas.jpg" alt="">
+                    <div class="titulo">
+                        <h3>As cortinas do tabernáculo</h3>
+                    </div>
+                    <div class="textos">
+                        <p id="text-card-um">Você sabia que o tabernáculo possuí 4 cortinas, que têm como funcão o
+                            revestimento do
+                            tabernaculo, e cada uma delas possuem caracteriscas únicas de Cristo. <a
+                                onclick="curiosidade()">Saiba
+                                mais</a>
+                        </p>
+                    </div>
+                </div>
 
-    <div class="botaoSubir">
-        <a href="#navTopo">
-            <span class="material-symbols-outlined">
-                north
-            </span>
-        </a>
+                <!-- https://www.estudosgospel.com.br/estudo-biblico-evangelico-diversos/as-tres-portas-do-tabernaculo.html -->
+                <div class="card reveal2" id="card-dois"><img src="./assets/imgs/porta.jpg" alt="">
+                    <div class="titulo">
+                        <h3>As entradas do tabernáculo</h3>
+                    </div>
+                    <div class="textos">
+                        <p id="text-card-dois">
+                            Sim, cada parte do tabernáculo possuí um significado importante que apontam a Jesus, e as
+                            portas
+                            do tabernáculo são mais um exemplo disso. <a onclick="curiosidade()">Saiba mais</a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card reveal3" id="card-tres"><img src="./assets/imgs/book.jpg" alt="">
+                    <div class="titulo">
+                        <h3>Qual seu principal idioma?</h3>
+                    </div>
+                    <div class="textos">
+                        <p id="text-card-tres">
+                            A biblia foi escrita em 3 idiomas sendo Hebraico, Aramaico e Grego. E como o português
+                            possuí
+                            muito mais palavras, algumas palavras do original acabam tendo mias de um significado. <a
+                                onclick="curiosidade()">Saiba mais</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="direcionamento">
+                <div class="texto reveal2">
+                    <p id="text-existem">Existem ainda milhares de curiosidades que percorrem os 66 livros que compôem a
+                        biblia! Conheça algumas delas e se souber de alguma compartilhe conosco! </p>
+                    <span class="material-symbols-outlined" id="span-existem">
+                        south
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <section class="sectionQuarta">
+            <div class="partea joao">
+                <img src="./assets/Sign up-bro.svg">
+            </div>
+            <div class="parteb">
+                <div class="titulo">
+                    <h2>Faça parte de nossa comunidade!</h2>
+                </div>
+                <div class="texto">
+                    <p>Além de aprender mais sobre as escrituras, você também pode ensinar, compartilhando aqui que você
+                        sabe!
+                    </p>
+                </div>
+                <div class="botoes">
+                    <Button>Entrar</Button>
+                    <button>Cadastrar</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="sectionQuinta">
+            <div class="parteA">
+                <div class="titulo">
+                    <h2 id="titulo-quinta">Desafie seu conhecimento nas escrituras</h2>
+                </div>
+                <div class="texto">
+                    <p>Conheça o nosso Quiz bíblico, onde você aprede sobre as escrituras jogando!
+                        Existe alguma forma melhor que aprender algo se não for divertido? Então não perca tempo!
+                        Junte-se
+                        com seus amigos e familiares e venham se divertir!</p>
+                </div>
+                <div class="botao">
+                    <button>Jogar!</button>
+                </div>
+            </div>
+            <div class="parteB pedro">
+                <img src="./assets/Winners-amico.svg" alt="">
+            </div>
+        </section>
     </div>
 
-    <section class="sectionSegunda">
-        <div class="sobre reveal1" id="caixa">
-            <div class="caixa">
-                <span class="material-symbols-outlined">
-                    import_contacts
-                </span>
-                <p id="info-1">A Bíblia é o livro mais <br>vendido do mundo com mais <br> de 5 bilhões de cópias.</p>
-            </div>
-            <div class="caixa">
-                <span class="material-symbols-outlined">
-                    translate
-                </span>
-                <p id="info-2">Traduzida em mais <br> de 700 idiomas</p>
-            </div>
-            <div class="caixa">
-                <span class="material-symbols-outlined">
-                    groups
-                </span>
-                <p id="info-3">Escrita por 40 autores <br>diferentes, em épocas
-                    diferentes e <br> em contextos diferentes. </p>
-            </div>
-            <div class="caixa">
-                <span class="material-symbols-outlined">
-                    format_list_numbered
-                </span>
-                <p id="info-4">A Bíblia completa <br>Possuí 1189 Capítulos.</p>
-            </div>
-            <div class="caixa">
-                <span class="material-symbols-outlined">
-                    book
-                </span>
-                <p id="info-5">Ao todo são 66 livros sendo<br>divididos em dois testamentos, <br> 39 capítulos no
-                    primeiro e 27 no
-                    segundo.</p>
-            </div>
-        </div>
-        <div class="mensagem">
-            <h2 class="joao">João 8:32 - E conhecereis a verdade, e a verdade vos libertará.</h2>
-        </div>
-    </section>
 
-    <section class="sectionTerceira">
-        <!-- https://www.searanews.com.br/as-cortinas-do-tabernaculo/ -->
-        <div class="cards">
-            <div class="card reveal1" id="card-um">
-                <img src="./assets/imgs/cortinas.jpg" alt="">
-                <div class="titulo">
-                    <h3>As cortinas do tabernáculo</h3>
-                </div>
-                <div class="textos">
-                    <p id="text-card-um">Você sabia que o tabernáculo possuí 4 cortinas, que têm como funcão o
-                        revestimento do
-                        tabernaculo, e cada uma delas possuem caracteriscas únicas de Cristo. <a href="#">Saiba mais</a>
-                    </p>
-                </div>
-            </div>
 
-            <!-- https://www.estudosgospel.com.br/estudo-biblico-evangelico-diversos/as-tres-portas-do-tabernaculo.html -->
-            <div class="card reveal2" id="card-dois"><img src="./assets/imgs/porta.jpg" alt="">
-                <div class="titulo">
-                    <h3>As entradas do tabernáculo</h3>
-                </div>
-                <div class="textos">
-                    <p id="text-card-dois">
-                        Sim, cada parte do tabernáculo possuí um significado importante que apontam a Jesus, e as portas
-                        do tabernáculo são mais um exemplo disso. <a href="#">Saiba mais</a>
-                    </p>
-                </div>
-            </div>
 
-            <div class="card reveal3" id="card-tres"><img src="./assets/imgs/book.jpg" alt="">
-                <div class="titulo">
-                    <h3>Qual seu principal idioma?</h3>
-                </div>
-                <div class="textos">
-                    <p id="text-card-tres">
-                        A biblia foi escrita em 3 idiomas sendo Hebraico, Aramaico e Grego. E como o português possuí
-                        muito mais palavras, algumas palavras do original acabam tendo mias de um significado. <a
-                            href="#">Saiba mais</a>
-                    </p>
-                </div>
+    <!-- Curiosidades -->
+    <div class="curiosidades" id="div-curiosidades">
+        <div class="container">
+            <div class="conteudo">
+                <a href="">Augusto Lindo</a>
             </div>
         </div>
-        <div class="direcionamento">
-            <div class="texto reveal2">
-                <p id="text-existem">Existem ainda milhares de curiosidades que percorrem os 66 livros que compôem a
-                    biblia! Conheça algumas delas e se souber de alguma compartilhe conosco! </p>
-                <span class="material-symbols-outlined" id="span-existem">
-                    south
-                </span>
-            </div>
-        </div>
-    </section>
-
-    <section class="sectionQuarta">
-        <div class="partea joao">
-            <img src="./assets/Sign up-bro.svg">
-        </div>
-        <div class="parteb">
-            <div class="titulo">
-                <h2>Faça parte de nossa comunidade!</h2>
-            </div>
+        <div class="container">
             <div class="texto">
-                <p>Além de aprender mais sobre as escrituras, você também pode ensinar, compartilhando aqui que você
-                    sabe!
-                </p>
-            </div>
-            <div class="botoes">
-                <Button>Entrar</Button>
-                <button>Cadastrar</button>
+                <h2>As portas do tabernáculo</h2>  
+                </div>
+            <div class="conteudo">
+                <a href="">Augusto Lindo</a>
             </div>
         </div>
-    </section>
+        <div class="container">
+            <div class="conteudo">
+                <a href="">Augusto Lindo</a>
+            </div>
+        </div>
 
-    <section class="sectionQuinta">
-        <div class="parteA">
-            <div class="titulo">
-                <h2 id="titulo-quinta">Desafie seu conhecimento nas escrituras</h2>
-            </div>
-            <div class="texto">
-                <p>Conheça o nosso Quiz bíblico, onde você aprede sobre as escrituras jogando!
-                    Existe alguma forma melhor que aprender algo se não for divertido? Então não perca tempo! Junte-se
-                    com seus amigos e familiares e venham se divertir!</p>
-            </div>
-            <div class="botao">
-                <button>Jogar!</button>
-            </div>
-        </div>
-        <div class="parteB pedro">
-            <img src="./assets/Winners-amico.svg" alt="">
-        </div>
-    </section>
-
+    </div>
 
     <!-- FOOTER -->
     <footer>
@@ -363,6 +387,7 @@
             reset: true
         }
     );
+
     ScrollReveal().reveal('.reveal2',
         {
             duration: 2300,
@@ -411,5 +436,29 @@
         if (slideIndex > slides.length) { slideIndex = 1 }
         slides[slideIndex - 1].style.display = "flex";
         setTimeout(showSlides, 5000); // Change image every 2 seconds
+    }
+</script>
+
+<!-- Mudar aba -->
+<script>
+    var numAba = 1
+    var principal = document.getElementById('div-principal')
+    var curiosidades = document.getElementById('div-curiosidades')
+    var link1 = document.getElementById('um-link')
+    var link2 = document.getElementById('dois-link')
+
+    function curiosidade() {
+
+        principal.style.display = "none"
+        curiosidades.style.display = "block"
+        link1.classList.remove("aqui")
+        link2.classList.add("aqui")
+    }
+
+    function ParaInicial() {
+        principal.style.display = "block"
+        curiosidades.style.display = "none"
+        link1.classList.add("aqui")
+        link2.classList.remove("aqui")
     }
 </script>

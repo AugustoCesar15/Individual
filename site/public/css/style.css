@@ -26,7 +26,6 @@
   transition: var(--trans);
   scroll-behavior: smooth;
 }
-
 body {
   background-color: #f5f5f5;
   overflow-x: hidden;
@@ -757,18 +756,18 @@ nav .logo .h1:hover {
 .curiosidades .container {
   width: 80%;
   height: 20vmax;
-  margin: 30px auto;
+  margin: 50px auto;
   background-color: var(--clr);
   border-radius: 70px 0 70px 0;
-  box-shadow: 10px 10px 30px #000;
+  box-shadow: 8px 8px 30px #000;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.curiosidades .container .texto{
+.curiosidades .container .texto {
   position: absolute;
-  z-index: -1;
+  z-index: 1;
   width: 60%;
   height: 15vmax;
   background-color: transparent;
@@ -777,27 +776,50 @@ nav .logo .h1:hover {
   justify-content: center;
 }
 
-.curiosidades .container .texto h2{
+.curiosidades .container .texto h2 {
   font-size: 4em;
   color: #161618;
   font-family: var(--vibes);
-  font-weight: normal;
+  font-weight: 800;
 }
 
 .curiosidades .container .conteudo {
   width: 100%;
   height: 20vmax;
   margin: 30px auto;
-  background-color: rgba(17, 17, 17, 0.974);
-  opacity: 0.00005  ;
+  background-color: rgba(17, 17, 17, 0.94);
+  opacity: 0.00005;
   border-radius: 70px 0 70px 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  z-index: 3;
 }
 
 .curiosidades .container .conteudo:hover {
   opacity: 1;
+}
+
+.curiosidades .container .conteudo .primeiraInfo{
+  width: 80%;
+}
+.curiosidades .container .conteudo p{
+  font-size: 1.2em;
+  font-family: 'Ubuntu';
+  color: #f5f5f5;
+  text-align: justify;
+}
+.curiosidades .container .conteudo a{
+  color: #797979;
+  cursor: pointer;
+}
+
+.curiosidades .container:nth-last-child(3) {
+  background-image: url('./../assets/imgs/cortinas-do-tabernaculo.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .curiosidades .container:nth-last-child(2) {
@@ -805,7 +827,84 @@ nav .logo .h1:hover {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  mix-blend-mode: darken;
+}
+
+.curiosidades .container:nth-last-child(1) {
+  background-image: url('./../assets/imgs/antigo-testamento.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.curiosidades .container .modal {
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  height: 47vmax;
+  background-color: #1616185f;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  /* padding-top: 80px; */
+  top: 0;
+}
+
+.curiosidades .container .modal .texto {
+  min-width: 35%;
+  max-width: 70%;
+  height: 40vmax;
+  border-radius: 20px;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.curiosidades .container .modal .texto .fechar,
+.curiosidades .container .modal .texto .rodape {
+  width: 100%;
+  height: 10%;
+  border-bottom: 1px solid #797979;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 30px;
+}
+.curiosidades .container .modal .texto .rodape{
+  border-bottom: 0;
+  border-top: 1px solid #383838;
+}
+.curiosidades .container .modal .texto .info{
+  width: 80%;
+  height: 80%;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  flex-direction: column;
+  padding: 0 20px;
+  overflow-y: scroll;
+}
+.curiosidades .container .modal .texto .info h4{
+  font-size: 1.7em;
+  font-family: var(--messi);
+}
+
+.curiosidades .container .modal .texto .fechar button{
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+.curiosidades .container .modal .texto .fechar button span{
+  color: var(--clr);
+  font-size: 2.4em;
+  cursor: pointer;
+}
+
+.curiosidades .container .modal .texto .info p {
+  text-align: justify;
+  font-family: 'Ubuntu';
+  font-size: 1.2em;
 }
 
 

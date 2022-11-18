@@ -17,6 +17,7 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
+    <link rel="stylesheet" href="https://www.fontspace.com/mioge-font-f88461">
     <script src="https://unpkg.com/scrollreveal"></script>
 </head>
 
@@ -35,8 +36,8 @@
                 <li><a onclick="ParaInicial()" class="aqui" id="um-link">Página Inicial</a></li>
                 <li id="dois-link"><a onclick="curiosidade()">Curiosidades</a>
                 </li>
-                <li class="curi"><a href="">Login</a></li>
-                <li class="cad"><a href="">Cadastre-se</a></li>
+                <li class="curi"><a onclick="abrirLogin()">Login</a></li>
+                <li class="cad"><a onclick="abrirCad()">Cadastre-se</a></li>
             </ul>
         </div>
 
@@ -198,8 +199,8 @@
                     </p>
                 </div>
                 <div class="botoes">
-                    <Button>Entrar</Button>
-                    <button>Cadastrar</button>
+                    <Button onclick="abrirLogin()">Entrar</Button>
+                    <button onclick="abrirCad()">Cadastrar</button>
                 </div>
             </div>
         </section>
@@ -420,9 +421,10 @@
                             Quando o Império Romano se tornou cada vez mais influente e o latim se tornou a língua
                             comum, partes da Bíblia foram traduzidas para o latim também. Estes são chamados de Vetus
                             Latina. No século 5 DC, toda a Bíblia foi traduzida para o latim por Hieronymus. Esta
-                            tradução é chamada de Versio Vulgata, que significa “tradução para o povo comum”. 
+                            tradução é chamada de Versio Vulgata, que significa “tradução para o povo comum”.
                             <br><br>
-                            Por séculos, essa tem sido a tradução da Bíblia usada nas igrejas ocidentais. Durante a Idade
+                            Por séculos, essa tem sido a tradução da Bíblia usada nas igrejas ocidentais. Durante a
+                            Idade
                             Média, a igreja até proibiu outras traduções. Mas como o latim não era mais compreendido
                             pelas pessoas comuns, mais e mais iniciativas se desenvolveram para traduzir a Bíblia para
                             as línguas maternas das pessoas.
@@ -430,6 +432,67 @@
                     </div>
                     <div class="rodape"></div>
                 </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="login" id="div-login">
+        <div class="fechar">
+            <button>
+                <span class="material-symbols-outlined" onclick="fecharLogin()">
+                    close
+                </span>
+            </button>
+        </div>
+        <div class="conteudo">
+            <div class="mensagem">
+                <h4 style="text-align: center;">Seja <br> Bem vindo!</h4>
+            </div>
+            <div class="email">
+                <p>E-mail</p>
+                <input type="text" id="in_email" placeholder="exemploemail@exemplo.com">
+            </div>
+            <div class="senha">
+                <p>Senha</p>
+                <input type="password" id="in_senha" placeholder="**********">
+            </div>
+            <div class="botao">
+                <button onclick="entrar()">Entrar</button>
+                <p>Ainda não tem conta? <span style="cursor: pointer;" onclick="abrirCad()">Cadastre-se</span></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="cadastro" id="div-cadastro">
+        <div class="fechar">
+            <button>
+                <span class="material-symbols-outlined" onclick="fecharCad()">
+                    close
+                </span>
+            </button>
+        </div>
+        <div class="conteudo">
+            <div class="mensagem">
+                <h4>Crie sua conta!</h4>
+            </div>
+            <div class="entradas">
+                <p>Nome</p>
+                <input type="text" id="nome_input" placeholder="Nome completo">
+
+                <p>E-mail</p>
+                <input type="text" id="email_input" placeholder="emailexemplo@exemplo.com">
+
+                <p>Senha</p>
+                <input type="password" id="senha_input" placeholder="**********">
+
+                <p>Confirmação de senha</p>
+                <input type="password" id="confirmacao_senha_input" placeholder="**********">
+            </div>
+
+            <div class="botao">
+                <button>Cadastrar</button>
             </div>
         </div>
 
@@ -458,7 +521,7 @@
     }
 
     function fecharEscondidaNova() {
-        if (numBarra = 1) {
+        if (numBarra != 1) {
             barra.left = "-100%"
 
             numBarra = 1
@@ -488,6 +551,7 @@
         var txtInfo4 = document.getElementById('info-4').style
         var txtInfo5 = document.getElementById('info-5').style
         var tituloQuinta = document.getElementById('titulo-quinta').style
+        var navBarEscondida = document.getElementById('novaNav').style
 
         if (numTema == 1) {
             body.backgroundColor = "#383838"
@@ -508,6 +572,7 @@
             txtInfo4.color = "#f5f5f5"
             txtInfo5.color = "#f5f5f5"
             tituloQuinta.color = "#f5f5f5"
+            navBarEscondida.backgroundColor = "#383838"
 
             numTema++
         } else {
@@ -529,6 +594,7 @@
             txtInfo4.color = "#383838"
             txtInfo5.color = "#383838"
             tituloQuinta.color = "#383838"
+            navBarEscondida.backgroundColor = "#f5f5f5"
 
             numTema = 1
         }
@@ -689,4 +755,105 @@
 
         numModal++
     }
+</script>
+
+<!-- Chamando o login e o Cadastrar -->
+<script>
+    var numLogin = 1
+    var numCad = 1
+    var divLogin = document.getElementById('div-login').style
+    var divCad = document.getElementById('div-cadastro').style
+
+    function abrirLogin() {
+        divLogin.left = "0"
+        divCad.left = "-60%"
+    }
+
+    function fecharLogin() {
+        divLogin.left = "-60%"
+    }
+
+    function abrirCad() {
+        divCad.left = "0%"
+        divLogin.left = "-60%"
+    }
+
+    function fecharCad() {
+        divCad.left = "-60%"
+    }
+
+</script>
+
+
+<!-- Login -->
+<script>
+    function entrar() {
+        aguardar();
+
+        var emailVar = in_email.value;
+        var senhaVar = senha_input.value;
+
+        if (emailVar == "" || senhaVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.id;
+
+                    setTimeout(function () {
+                        window.location = "./dashboard/cards.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
+
 </script>

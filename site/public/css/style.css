@@ -1,12 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=El+Messiri&family=Great+Vibes&family=Ubuntu:wght@300&display=swap');
 
 
+@font-face {
+  font-family: 'Mioge';
+  src: url('./../MiogeFreeTrial-WyBMz.ttf');
+}
+
+@font-face {
+  font-family: 'titulo';
+  src: url('./../Aorell-mLEM5.ttf');
+}
+
 :root {
   --clr: #bb3838;
   --navHei: 80px;
   --trans: all 1s;
   --messi: 'El messiri';
-  --vibes: 'Great vibes'
+  --vibes: 'Great vibes';
 }
 
 ::-webkit-scrollbar {
@@ -26,6 +36,7 @@
   transition: var(--trans);
   scroll-behavior: smooth;
 }
+
 body {
   background-color: #f5f5f5;
   overflow-x: hidden;
@@ -82,16 +93,19 @@ nav .logo {
 
 nav .logo .h1 {
   font-size: 2.8em;
-  font-family: var(--vibes);
+  font-family: 'titulo';
   color: #383838;
   font-weight: normal;
   position: absolute;
   text-decoration: none;
+  -webkit-text-stroke-width: 0.1mm;
+  -webkit-text-stroke-color: var(--clr);
+  text-shadow: 3px 3px 8px var(--clr);
 }
 
 nav .logo .h1:hover {
   position: absolute;
-  letter-spacing: 5px;
+  letter-spacing: 10px;
   cursor: pointer;
 }
 
@@ -622,6 +636,7 @@ nav .logo .h1:hover {
   font-family: var(--messi);
   font-size: 1.1em;
   outline: none;
+  cursor: pointer;
 }
 
 .sectionQuarta .parteb .botoes button:hover {
@@ -801,16 +816,18 @@ nav .logo .h1:hover {
   opacity: 1;
 }
 
-.curiosidades .container .conteudo .primeiraInfo{
+.curiosidades .container .conteudo .primeiraInfo {
   width: 80%;
 }
-.curiosidades .container .conteudo p{
+
+.curiosidades .container .conteudo p {
   font-size: 1.2em;
   font-family: 'Ubuntu';
   color: #f5f5f5;
   text-align: justify;
 }
-.curiosidades .container .conteudo a{
+
+.curiosidades .container .conteudo a {
   color: #797979;
   cursor: pointer;
 }
@@ -871,11 +888,13 @@ nav .logo .h1:hover {
   align-items: center;
   padding-right: 30px;
 }
-.curiosidades .container .modal .texto .rodape{
+
+.curiosidades .container .modal .texto .rodape {
   border-bottom: 0;
   border-top: 1px solid #383838;
 }
-.curiosidades .container .modal .texto .info{
+
+.curiosidades .container .modal .texto .info {
   width: 80%;
   height: 80%;
   display: flex;
@@ -885,17 +904,19 @@ nav .logo .h1:hover {
   padding: 0 20px;
   overflow-y: scroll;
 }
-.curiosidades .container .modal .texto .info h4{
+
+.curiosidades .container .modal .texto .info h4 {
   font-size: 1.7em;
   font-family: var(--messi);
 }
 
-.curiosidades .container .modal .texto .fechar button{
+.curiosidades .container .modal .texto .fechar button {
   background-color: transparent;
   border: none;
   outline: none;
 }
-.curiosidades .container .modal .texto .fechar button span{
+
+.curiosidades .container .modal .texto .fechar button span {
   color: var(--clr);
   font-size: 2.4em;
   cursor: pointer;
@@ -906,6 +927,245 @@ nav .logo .h1:hover {
   font-family: 'Ubuntu';
   font-size: 1.2em;
 }
+
+
+
+
+
+
+
+/* Login */
+.login, .cadastro {
+  width: 25%;
+  height: 100vh;
+  box-shadow: 1px 0 5px #161618;
+  position: fixed;
+  z-index: 30000;
+  top: 0;
+  left: -60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #f5f5f5;
+  transition: all 0.5s;
+}
+
+
+.login .fechar, .cadastro .fechar {
+  width: 90%;
+  height: 10%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  /* background-color: #1298183f; */
+}
+
+.login .fechar button, 
+.cadastro .fechar button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.login .fechar button span, 
+.cadastro .fechar button span {
+  font-size: 2.5em;
+  color: var(--clr);
+  cursor: pointer;
+}
+
+.login .conteudo,
+.cadastro .conteudo {
+  width: 90%;
+  height: 85%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  /* background-color: #283742; */
+}
+
+.login .conteudo .mensagem,
+.login .conteudo .email,
+.login .conteudo .senha,
+.login .conteudo .botao {
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+
+.login .conteudo .mensagem h4 {
+  color: var(--clr);
+  font-family: 'Mioge';
+  font-size: 2.5em;
+  font-weight: 800;
+}
+
+.login .conteudo .email p,
+.login .conteudo .senha p {
+  color: var(--clr);
+  font-family: var(--messi);
+  font-size: 1.3em;
+}
+
+.login .conteudo .email input,
+.login .conteudo .senha input {
+  width: 100%;
+  height: 40%;
+  background-color: transparent;
+  border: 2px solid var(--clr);
+  border-radius: 8px;
+  outline: none;
+  color: var(--clr);
+  padding: 0 5px;
+  font-family: 'Ubuntu';
+  font-size: 1em;
+}
+
+.login .conteudo .email input:focus,
+.login .conteudo .senha input:focus {
+  transform: scale(1.05);
+}
+
+.login .conteudo .botao {
+  margin-top: 5px;
+  align-items: center;
+  width: 80%;
+}
+
+.login .conteudo .botao button {
+  width: 70%;
+  height: 45%;
+  background-color: var(--clr);
+  border: 2px solid #772d2d;
+  color: #f5f5f5;
+  border-radius: 8px;
+  font-family: var(--messi);
+  font-size: 1.1em;
+  cursor: pointer;
+}
+
+.login .conteudo .botao button:hover {
+  background-color: transparent;
+  color: var(--clr);
+  border: 2px solid var(--clr);
+}
+
+.login .conteudo .botao button:focus {
+  background-color: transparent;
+  color: var(--clr);
+  border: 2px solid var(--clr);
+  transform: scale(1.05);
+}
+
+.login .conteudo .botao p {
+  margin-top: 5px;
+  color: #772d2d;
+  font-family: 'Ubuntu';
+}
+
+.login .conteudo .botao span {
+  color: var(--clr);
+  font-weight: 800;
+}
+
+
+.cadastro .conteudo .mensagem{
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cadastro .conteudo .mensagem h4{
+  color: var(--clr);
+  font-family: 'Mioge';
+  font-size: 2.5em;
+  font-weight: 800;
+}
+
+.cadastro .conteudo .entradas{
+  width: 80%;
+  height: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  /* background-color: #22312313; */
+}
+
+.cadastro .conteudo .entradas p{
+  font-size: 1.1em;
+  color: var(--clr);
+  font-family: var(--messi);
+}
+
+.cadastro .conteudo .entradas input{
+  background-color: transparent;
+  border: 2px solid var(--clr);
+  width: 100%;
+  height: 11%;
+  border-radius: 10px;
+  padding: 0 5px;
+  margin-bottom: 6%;
+  outline: none;
+  color: var(--clr);
+  font-family: 'Ubuntu';
+}
+
+.cadastro .conteudo .entradas input:focus{
+  transform: scale(1.05);
+}
+
+.cadastro .conteudo .botao {
+  width: 90%;
+  height: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cadastro .conteudo .botao button{
+  width: 70%;
+  height: 65%;
+  background-color: var(--clr);
+  border: 2px solid #772d2d;
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+  color: whitesmoke;
+  font-family: var(--messi);
+  font-size: 1.2em;
+}
+
+.cadastro .conteudo .botao button:hover{
+  background-color: transparent;
+  border: 2px solid var(--clr);
+  color: var(--clr);
+}
+
+.cadastro .conteudo .botao button:focus{
+  background-color: transparent;
+  border: 2px solid var(--clr);
+  color: var(--clr);
+  transform: scale(1.05);
+}
+
+
+
+
+
+
+
+
+
 
 
 

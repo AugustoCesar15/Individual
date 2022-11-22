@@ -465,7 +465,7 @@
         </div>
 
         <div id="card_erro">
-            <div id="mensagem_erro"></div>
+            <div id="mensagem_erro" class="mensagemLogado"></div>
         </div>
     </div>
 
@@ -498,6 +498,9 @@
             <div class="botao">
                 <button onclick="cadastrar()">Cadastrar</button>
             </div>
+        </div>
+        <div id="div_aguardar">
+            <img src="./assets/livro.gif" width="60" style="display: none;">
         </div>
 
     </div>
@@ -792,7 +795,7 @@
 <!-- Login -->
 <script>
     function entrar() {
-        // aguardar();
+        aguardar();
 
         var emailVar = in_email.value;
         var senhaVar = in_senha.value;
@@ -906,12 +909,15 @@
             if (resposta.ok) {
                 // cardErro.style.display = "block";
 
-                mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+                mensagem_erro.innerHTML = "<p>Cadastro realizado com sucesso! <br> Faça o Login!</p>";
 
                 setTimeout(() => {
-                    window.location = "index.html";
-                }, "2000")
-                
+                    abrirLogin();
+                    // window.location = "index.html";
+                }, "100")
+
+
+
                 limparFormulario();
                 finalizarAguardar();
             } else {
@@ -919,7 +925,7 @@
             }
         }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
-            // finalizarAguardar();
+            finalizarAguardar();
         });
 
         return false;

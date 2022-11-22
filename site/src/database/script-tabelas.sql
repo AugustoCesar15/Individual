@@ -6,23 +6,32 @@
 comandos para mysql - banco local - ambiente de desenvolvimento
 */
 
-CREATE DATABASE aquatech;
+create database TheBible;
 
-USE aquatech;
+use TheBible;
 
-CREATE TABLE usuario (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	nome VARCHAR(50),
-	email VARCHAR(50),
-	senha VARCHAR(50)
+create table Usuario(
+	idUsuario int auto_increment,
+    Nome varchar(50),
+    Email varchar(50),
+	Senha varchar(50),
+    primary key(idUsuario, Email)
 );
 
-CREATE TABLE aviso (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	titulo VARCHAR(100),
-	descricao VARCHAR(150),
-	fk_usuario INT,
-	FOREIGN KEY (fk_usuario) REFERENCES usuario(id)
+create table Perfil (
+	idPerfil int primary key auto_increment,
+    Bio varchar(100),
+    fkUsuario int,
+    fkEmail varchar(50),
+    foreign key (fkUsuario, fkEmail) references Usuario (idUsuario, Email)
+);
+
+create table Post (
+	idPost int primary key auto_increment,
+    Titulo varchar(45),
+    Descricao varchar(250),
+    fkPerfil int,
+    foreign key(fkPerfil) references Perfil (idPerfil)
 );
 
 create table aquario (

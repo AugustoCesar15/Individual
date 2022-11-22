@@ -3,12 +3,12 @@
 
 @font-face {
   font-family: 'Mioge';
-  src: url('./../MiogeFreeTrial-WyBMz.ttf');
+  src: url('./../assets/MiogeFreeTrial-WyBMz.ttf');
 }
 
 @font-face {
   font-family: 'titulo';
-  src: url('./../Aorell-mLEM5.ttf');
+  src: url('./../assets/Aorell-mLEM5.ttf');
 }
 
 :root {
@@ -1074,6 +1074,14 @@ nav .logo .h1:hover {
 .login .conteudo .botao span {
   color: var(--clr);
   font-weight: 800;
+}
+
+.login .mensagemLogado p{
+  color: var(--clr);
+  font-size: 1.1em;
+  font-family: var(--messi);
+  margin-bottom: 30px;
+  text-align: center;
 }
 
 

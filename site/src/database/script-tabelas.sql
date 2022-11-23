@@ -30,8 +30,8 @@ create table Post (
 	idPost int primary key auto_increment,
     Titulo varchar(45),
     Descricao varchar(250),
-    fkPerfil int,
-    foreign key(fkPerfil) references Perfil (idPerfil)
+    fkUsuario int,
+    foreign key(fkUsuario) references Usuario (idUsuario)
 );
 
 create table aquario (

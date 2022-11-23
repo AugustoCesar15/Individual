@@ -9,7 +9,7 @@
     <title>AquaTech | Avisos</title>
 
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="./dashboards.css">
+    <link rel="stylesheet" href="./css/dashboards.css">
     <script src="../js/funcoes.js"></script>
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -139,9 +139,9 @@
 
             if (resposta.ok) {
                 window.alert("Post realizado com sucesso pelo usuario de ID: " + idUsuario + "!");
-                window.location = "/dashboard/mural.html";
+                window.location = "./mural.html";
                 limparFormulario();
-                finalizarAguardar();
+                // finalizarAguardar();
             } else if (resposta.status == 404) {
                 window.alert("Deu 404!");
             } else {
@@ -149,7 +149,7 @@
             }
         }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
-            finalizarAguardar();
+            // finalizarAguardar();
         });
 
         return false;
@@ -160,7 +160,7 @@
         sessionStorage.ID_POSTAGEM_EDITANDO = idAviso;
         console.log("cliquei em editar - " + idAviso);
         window.alert("Você será redirecionado à página de edição do aviso de id número: " + idAviso);
-        window.location = "/dashboard/edicao-aviso.html"
+        window.location = "./edicao-aviso.html"
 
     }
 
@@ -175,7 +175,7 @@
 
             if (resposta.ok) {
                 window.alert("Post deletado com sucesso pelo usuario de email: " + sessionStorage.getItem("EMAIL_USUARIO") + "!");
-                window.location = "/dashboard/mural.html"
+                window.location = "./mural.html"
             } else if (resposta.status == 404) {
                 window.alert("Deu 404!");
             } else {
@@ -250,14 +250,14 @@
                         feed.appendChild(divPublicacao);
                     }
 
-                    finalizarAguardar();
+                    // finalizarAguardar();
                 });
             } else {
                 throw ('Houve um erro na API!');
             }
         }).catch(function (resposta) {
             console.error(resposta);
-            finalizarAguardar();
+            // finalizarAguardar();
         });
     }
 
@@ -271,7 +271,7 @@
         divResultado.appendChild(document.createTextNode(formulario.get("descricao")));
         divResultado.innerHTML = formulario.get("descricao");
 
-        finalizarAguardar();
+        // finalizarAguardar();j
 
         return false;
     }

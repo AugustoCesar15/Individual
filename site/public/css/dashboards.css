@@ -268,16 +268,17 @@ body {
   cursor: pointer;
   border: 2px solid var(--clr);
   border-radius: 5px;
-  padding: 10px 15px;
+  padding: 8px 10px;
 
-  font-weight: 600;
-  font-size: 18px;
-  color: var;
+  font-family: var(--messi);
+  font-weight: normal;
+  font-size: 1.2em;
+  color: #f5f5f5;
   background-color: var(--clr);
 }
 
 .conteudoPrincipal .avisos .feed {
-
+  overflow-y: auto;
   position: relative;
 }
 

@@ -52,7 +52,7 @@ body {
 }
 
 .barraPerfil {
-  width: 30%;
+  width: 25%;
   height: 100vh;
   background-color: transparent;
   display: flex;
@@ -60,7 +60,7 @@ body {
   align-items: center;
   flex-direction: column;
   box-shadow: 2px 0 10px #161618;
-  margin-right: 40px;
+  /* margin-right: 40px; */
 }
 
 .barraPerfil .titulo {
@@ -71,10 +71,7 @@ body {
   align-items: center;
 }
 
-.barraPerfil .titulo a
-
-/*(.h2)*/
-  {
+.barraPerfil .titulo a/*(.h2)*/{
   color: var(--clr);
   font-size: 2.5em;
   font-family: 'titulo';
@@ -82,7 +79,8 @@ body {
 }
 
 .barraPerfil .titulo a:hover {
-  letter-spacing: 10px;
+  letter-spacing: 8px;
+  text-shadow: 1px 0 4px #383838;
 }
 
 .barraPerfil .conteudo {
@@ -114,7 +112,7 @@ body {
   padding-top: 10px;
   /* background-color: cadetblue; */
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
 }
 
@@ -129,6 +127,73 @@ body {
   color: var(--clr);
   font-family: 'Ubuntu';
   text-align: justify;
+}
+
+.barraPerfil .adicionarbio{
+  width: 80%;
+  height: 10%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  /* background-color: gold; */
+  display: none;
+}
+
+.barraPerfil .adicionarbio input{
+  width: 70%;
+  height: 60%;
+  background-color: transparent;
+  border: 2px solid var(--clr);
+  border-radius: 3px;
+  outline: none;
+  padding-left: 6px;
+
+  color: var(--clr);
+  font-size: 0.8em;
+  font-family: 'Ubuntu';
+}
+
+.barraPerfil .adicionarbio button{
+  width: 25%;
+  height: 60%;
+  background-color: var(--clr);
+  border-radius: 6px;
+  border: none;
+
+  color: #f5f5f5;
+  font-family: var(--messi);
+  outline: none;
+}
+
+.barraPerfil .conteudo .links{
+  width: 80%;
+  height: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: violet; */
+}
+
+.barraPerfil .conteudo .links ul{
+  list-style: none;
+  width: 45%;
+}
+
+.barraPerfil .conteudo .links ul li{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  cursor: pointer;
+}
+
+.barraPerfil .conteudo .links ul li a{
+  color: var(--clr);
+  font-size: 1.3em;
+  font-family: var(--messi);
+  text-decoration: underline;
+}
+.barraPerfil .conteudo .links ul li span{
+  color: var(--clr);
 }
 
 .barraPerfil .sair {
@@ -154,6 +219,7 @@ body {
 .barraPerfil .sair p {
   font-size: 1.2em;
   font-family: var(--messi);
+  margin-left: 10px;
 }
 
 
@@ -192,8 +258,8 @@ body {
   flex-direction: column;
   align-items: center;
   display: flex;
-  /* position: relative; */
-  /* top: -44%; */
+  position: relative;
+  top: -50%;
 }
 
 .conteudoPrincipal .avisos .container h1 {
@@ -277,25 +343,57 @@ body {
   background-color: var(--clr);
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .conteudoPrincipal .avisos .feed {
+  width: 60%;
+  max-height: 100vh;
+  /* background-color: #e6005a1f; */
   overflow-y: auto;
-  position: relative;
+  position: absolute;
+  top: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.conteudoPrincipal .avisos .feed .titulo{
+  width: 80%;
+  height: 13vh;
+  /* background-color: violet; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.conteudoPrincipal .avisos .feed .titulo h2{
+  color: var(--clr);
+  font-size: 2.5em;
+  font-family: 'label';
+  font-weight: normal;
 }
 
 
 
-.publicacao-btn-editar {
-  cursor: pointer;
-  font-family: "Exo 2", sans-serif;
-  border: 0;
-  border-radius: 5px;
-  font-weight: 600;
-  font-size: 14px;
-  padding: 5px 8px;
-  color: white;
-  background-color: var(--clr);
-  width: 80px;
-}
+
+
+
+
+
+
+
+
 
 .publicacao {
   display: flex;
@@ -304,22 +402,49 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: stretch;
-  border-bottom: 3px solid #e6005a;
+  border-bottom: 3px solid var(--clr);
   padding: 20px;
 }
 
-.publicacao>*:not(:last-child) {
-  padding: 0 0 10px 0;
+.publicacao span{
+  font-family: var(--messi);
+  color: var(--clr);
+  font-size: 1.15em;
+}
+.publicacao button {
+  width: 13%;
+  height: 25px;
+  background-color: var(--clr);
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  padding: 5px 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: #f5f5f5;
+  font-family: var(--messi);
+  font-size: 0.9em;
+}
+
+.publicacao-descricao{
+  width: 95%;
+  height: auto;
+  padding:  0 0 2% 0;
+  color: #383838;
+  font-family: 'Ubuntu';
 }
 
 .div-results {
-  width: 100%;
+  width: 90%;
 }
 
 .div-results .feed-container {
-  background-color: #212124;
+  background-color: transparent;
+  box-shadow: 0 0 10px 1px #161618;
   border-radius: 5px;
-  margin-bottom: 80px;
+  /* margin-top: 80px; */
 }
 
 .div-buttons {
@@ -327,6 +452,6 @@ body {
   justify-content: flex-end;
 }
 
-.div-buttons>* {
+.div-buttons > * {
   margin-left: 30px;
 }

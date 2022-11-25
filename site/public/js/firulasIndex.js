@@ -58,6 +58,8 @@ function mudarTema() {
     var txtInfo5 = document.getElementById('info-5').style
     var tituloQuinta = document.getElementById('titulo-quinta').style
     var navBarEscondida = document.getElementById('novaNav').style
+    var telaLogin = document.getElementById('div-login').style
+    var telaCad = document.getElementById('div-cadastro').style
 
     if (numTema == 1) {
         body.backgroundColor = "#383838"
@@ -79,6 +81,8 @@ function mudarTema() {
         txtInfo5.color = "#f5f5f5"
         tituloQuinta.color = "#f5f5f5"
         navBarEscondida.backgroundColor = "#383838"
+        telaLogin.backgroundColor = "#383838"
+        telaCad.backgroundColor = "#383838"
 
         numTema++
     } else {

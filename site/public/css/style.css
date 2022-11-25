@@ -624,9 +624,6 @@ nav .logo .h1:hover {
     width: 100%;
   }
 
-  .sectionTerceira .card {
-    height: 33vmax;
-  }
 
   .sectionTerceira .direcionamento .texto {
     width: 80%;
@@ -1292,10 +1289,11 @@ nav .logo .h1:hover {
 
 
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 950px) {
   nav .logo .h1 {
     font-size: 2.4em;
   }
+
   nav .temazin button span {
     font-size: 2em;
   }
@@ -1315,13 +1313,78 @@ nav .logo .h1:hover {
     border-radius: 0;
   }
 
-
-
-  .sectionSegunda{
-    height: 40vmax;
+  .botaoSubir {
+    display: flex;
   }
+
+  .sectionSegunda {
+    height: 0px;
+    margin-top: 35vmax;
+  }
+
   .sectionSegunda .sobre {
+    width: 100%;
+    height: 35vmax;
+    top: 58vmax;
+    box-shadow: none;
+    flex-wrap: wrap;
+  }
+
+  .sectionSegunda .sobre .caixa {
+    width: 40%;
+  }
+
+  .sectionSegunda .sobre .caixa:nth-child(2) {
+    display: flex;
+  }
+
+  .sectionSegunda .sobre .caixa span {
+    font-size: 2em;
+  }
+
+  .sectionSegunda .sobre .caixa p {
+    font-size: 1em;
+  }
+
+  .sectionSegunda .mensagem {
     display: none;
+  }
+
+  .sectionTerceira {
+    background-color: var(--clr);
+    padding: 0;
+    margin-bottom: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50vmax;
+  }
+
+  .sectionTerceira .direcionamento {
+    align-items: center;
+  }
+
+  .sectionTerceira .cards {
+    display: none;
+  }
+
+  .sectionQuarta .partea {
+    width: 35%;
+  }
+
+  .sectionQuarta .parteb {
+    width: 65%;
+  }
+
+
+
+  .sectionQuinta .parteA .texto {
+    align-items: flex-end;
+    margin-left: 30px;
+  }
+
+  .sectionQuinta .parteA .botao {
+    align-items: flex-end;
   }
 
 }

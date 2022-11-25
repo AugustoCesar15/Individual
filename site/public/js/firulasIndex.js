@@ -105,6 +105,8 @@ function mudarTema() {
         txtInfo5.color = "#383838"
         tituloQuinta.color = "#383838"
         navBarEscondida.backgroundColor = "#f5f5f5"
+        telaLogin.backgroundColor = "#f5f5f5"
+        telaCad.backgroundColor = "#f5f5f5"
 
         numTema = 1
     }

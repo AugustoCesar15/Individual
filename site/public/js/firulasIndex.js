@@ -354,20 +354,20 @@ var divCad = document.getElementById('div-cadastro').style
 
 function abrirLogin() {
     divLogin.left = "0"
-    divCad.left = "-60%"
+    divCad.left = "-100%"
 }
 
 function fecharLogin() {
-    divLogin.left = "-60%"
+    divLogin.left = "-100%"
 }
 
 function abrirCad() {
     divCad.left = "0%"
-    divLogin.left = "-60%"
+    divLogin.left = "-100%"
 }
 
 function fecharCad() {
-    divCad.left = "-60%"
+    divCad.left = "-100%"
 }
 
 

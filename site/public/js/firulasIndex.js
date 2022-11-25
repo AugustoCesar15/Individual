@@ -60,6 +60,7 @@ function mudarTema() {
     var navBarEscondida = document.getElementById('novaNav').style
     var telaLogin = document.getElementById('div-login').style
     var telaCad = document.getElementById('div-cadastro').style
+    var daniel = document.getElementById('daniel_bomAmigo').style
 
     if (numTema == 1) {
         body.backgroundColor = "#383838"
@@ -83,6 +84,7 @@ function mudarTema() {
         navBarEscondida.backgroundColor = "#383838"
         telaLogin.backgroundColor = "#383838"
         telaCad.backgroundColor = "#383838"
+        daniel.color= "#f5f5f5"
 
         numTema++
     } else {
@@ -107,6 +109,7 @@ function mudarTema() {
         navBarEscondida.backgroundColor = "#f5f5f5"
         telaLogin.backgroundColor = "#f5f5f5"
         telaCad.backgroundColor = "#f5f5f5"
+        daniel.color= "#bb3838"
 
         numTema = 1
     }

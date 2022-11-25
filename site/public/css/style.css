@@ -1106,7 +1106,7 @@ nav .logo .h1:hover {
 .login .conteudo .email,
 .login .conteudo .senha,
 .login .conteudo .botao {
-  height: 20%;
+  height: 100px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -1305,7 +1305,7 @@ nav .logo .h1:hover {
     animation: none;
   }
   .navBar .links{
-    align-items: flex-end;
+    align-items: center;
   }
   .navBar .links .curi{
     margin-top: 70%;

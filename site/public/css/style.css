@@ -330,6 +330,11 @@ nav .logo .h1:hover {
   text-align: center;
 }
 
+@media only screen and (max-width: 1100px) {
+  .sectionPrincipal {
+    height: 55vmax;
+  }
+}
 
 
 
@@ -409,7 +414,33 @@ nav .logo .h1:hover {
   color: #f5f5f5;
 }
 
+@media only screen and (max-width: 1100px) {
 
+  .sectionSegunda .sobre {
+    width: 87%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    /* overflow-x: scroll; */
+    /* height: 40vmax; */
+    flex-wrap: nowrap;
+    top: 55vmax;
+  }
+
+  .sectionSegunda .sobre .caixa:nth-child(2),
+  .sectionSegunda .sobre .caixa:nth-child(5) {
+    display: none;
+    animation: testee 1s infinite;
+  }
+
+  .sectionSegunda .mensagem h2 {
+    font-size: 2.5em;
+    font-weight: normal;
+    font-family: 'Dancing Script';
+    color: #f5f5f5;
+  }
+}
 
 
 
@@ -561,7 +592,21 @@ nav .logo .h1:hover {
   }
 }
 
+@media only screen and (max-width: 1100px) {
 
+  .sectionTerceira .cards {
+    width: 100%;
+  }
+
+  .sectionTerceira .card {
+    height: 33vmax;
+  }
+
+  .sectionTerceira .direcionamento .texto {
+    width: 80%;
+  }
+
+}
 
 
 
@@ -651,7 +696,21 @@ nav .logo .h1:hover {
   color: #162229;
 }
 
+@media only screen and (max-width: 1100px) {
 
+  .sectionQuarta .parteb .titulo {
+    width: 100%;
+  }
+
+  .sectionQuarta .parteb .texto {
+    /* height: 40%; */
+  }
+
+  .sectionQuarta .parteb .botoes button {
+    width: 28%;
+    height: 4vmax;
+  }
+}
 
 
 
@@ -686,7 +745,7 @@ nav .logo .h1:hover {
 
 .sectionQuinta .parteA .titulo {
   width: 85%;
-  height: 30%;
+  height: 10%;
   display: flex;
   align-items: center;
   padding-left: 20px;
@@ -704,7 +763,7 @@ nav .logo .h1:hover {
   width: 70%;
   height: 50%;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   /* background-color: #e3b062; */
 }
 
@@ -748,6 +807,17 @@ nav .logo .h1:hover {
   color: var(--clr);
 }
 
+@media only screen and (max-width: 1100px) {
+  .sectionQuinta .parteA .texto {
+    width: 90%;
+    height: 60%;
+  }
+
+  .sectionQuinta .parteA .botao button {
+    width: 35%;
+    height: 4vmax;
+  }
+}
 
 
 
@@ -936,7 +1006,8 @@ nav .logo .h1:hover {
 
 
 /* Login */
-.login, .cadastro {
+.login,
+.cadastro {
   width: 25%;
   height: 100vh;
   box-shadow: 1px 0 5px #161618;
@@ -953,7 +1024,8 @@ nav .logo .h1:hover {
 }
 
 
-.login .fechar, .cadastro .fechar {
+.login .fechar,
+.cadastro .fechar {
   width: 90%;
   height: 10%;
   display: flex;
@@ -962,7 +1034,7 @@ nav .logo .h1:hover {
   /* background-color: #1298183f; */
 }
 
-.login .fechar button, 
+.login .fechar button,
 .cadastro .fechar button {
   display: flex;
   justify-content: center;
@@ -972,7 +1044,7 @@ nav .logo .h1:hover {
   outline: none;
 }
 
-.login .fechar button span, 
+.login .fechar button span,
 .cadastro .fechar button span {
   font-size: 2.5em;
   color: var(--clr);
@@ -1077,7 +1149,7 @@ nav .logo .h1:hover {
   font-weight: 800;
 }
 
-.login .mensagemLogado p{
+.login .mensagemLogado p {
   color: var(--clr);
   font-size: 1.1em;
   font-family: var(--messi);
@@ -1086,21 +1158,22 @@ nav .logo .h1:hover {
 }
 
 
-.cadastro .conteudo .mensagem{
+.cadastro .conteudo .mensagem {
   width: 100%;
   height: 10%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.cadastro .conteudo .mensagem h4{
+
+.cadastro .conteudo .mensagem h4 {
   color: var(--clr);
   font-family: 'Mioge';
   font-size: 2.5em;
   font-weight: 800;
 }
 
-.cadastro .conteudo .entradas{
+.cadastro .conteudo .entradas {
   width: 80%;
   height: 70%;
   display: flex;
@@ -1110,13 +1183,13 @@ nav .logo .h1:hover {
   /* background-color: #22312313; */
 }
 
-.cadastro .conteudo .entradas p{
+.cadastro .conteudo .entradas p {
   font-size: 1.1em;
   color: var(--clr);
   font-family: var(--messi);
 }
 
-.cadastro .conteudo .entradas input{
+.cadastro .conteudo .entradas input {
   background-color: transparent;
   border: 2px solid var(--clr);
   width: 100%;
@@ -1129,7 +1202,7 @@ nav .logo .h1:hover {
   font-family: 'Ubuntu';
 }
 
-.cadastro .conteudo .entradas input:focus{
+.cadastro .conteudo .entradas input:focus {
   transform: scale(1.05);
 }
 
@@ -1141,7 +1214,7 @@ nav .logo .h1:hover {
   justify-content: center;
 }
 
-.cadastro .conteudo .botao button{
+.cadastro .conteudo .botao button {
   width: 70%;
   height: 65%;
   background-color: var(--clr);
@@ -1154,13 +1227,13 @@ nav .logo .h1:hover {
   font-size: 1.2em;
 }
 
-.cadastro .conteudo .botao button:hover{
+.cadastro .conteudo .botao button:hover {
   background-color: transparent;
   border: 2px solid var(--clr);
   color: var(--clr);
 }
 
-.cadastro .conteudo .botao button:focus{
+.cadastro .conteudo .botao button:focus {
   background-color: transparent;
   border: 2px solid var(--clr);
   color: var(--clr);

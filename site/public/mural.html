@@ -42,7 +42,7 @@
 
             <div class="links">
                 <ul>
-                    <li  onclick="chamarPubli()">
+                    <li onclick="chamarPubli()">
                         <span class="material-symbols-outlined">
                             edit_note
                         </span><a>Publicar</a>
@@ -85,6 +85,19 @@
                 </div>
             </div>
 
+            <div class="ranking" id="div_ranking">
+                <div class="botoes">
+                    <button onclick="mostrarMetriicas()">
+                        Ranking de postagem
+                    </button>
+                    <button style="width: 30px; display: none;" id="fechar_ranking" onclick="fecharRanking()">X</button>
+                </div>
+                <div class="verResultado" id="div_resultar">
+                    <div class="resultar" id="exibir_resultado">
+                    </div>
+                </div>
+            </div>
+
             <div class="feed" id="div_mural">
                 <div class="titulo">
                     <h2>Publicações</h2>
@@ -106,6 +119,7 @@
 </html>
 
 <script src="./js/firulasMural.js"></script>
+<!-- <script src="./../src/routes/medidas.js"></script> -->
 
 <!-- Mural -->
 <script>
@@ -273,4 +287,51 @@
         return false;
     }
 
+</script>
+
+
+<script>
+
+    function mostrarMetriicas() {
+
+        document.getElementById('div_resultar').style.display = "flex"
+        document.getElementById('fechar_ranking').style.display = "block"
+
+        fetch("/medidas/mostrarMetrica", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+            .then(function (resposta) {
+                console.log(resposta)
+                if (resposta.ok) {
+                    resposta.json().then(function (response) {
+                        console.log(response)
+                        mostrarResultado(response)
+                    })
+                }
+                else {
+                    throw ("Houve um erro ao tentar realizar a postagem! Código da resposta: " + resposta.status);
+                }
+            })
+            .catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`)
+            })
+    }
+
+
+    function mostrarResultado(dado) {
+
+        var mensagem = ''
+        for (var i = 0; i < dado.length; i++) {
+            mensagem += `<p>${dado[i].nome}: <span>${dado[i].Quantidade}</span></p>`
+        }
+        exibir_resultado.innerHTML = mensagem
+    }
+
+    function fecharRanking() {
+        document.getElementById('fechar_ranking').style.display = "none"
+        document.getElementById('div_resultar').style.display = "none"
+    }
 </script>

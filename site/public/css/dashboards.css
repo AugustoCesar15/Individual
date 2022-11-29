@@ -71,7 +71,10 @@ body {
   align-items: center;
 }
 
-.barraPerfil .titulo a/*(.h2)*/{
+.barraPerfil .titulo a
+
+/*(.h2)*/
+  {
   color: var(--clr);
   font-size: 2.5em;
   font-family: 'titulo';
@@ -131,7 +134,7 @@ body {
   text-align: justify;
 }
 
-.barraPerfil .adicionarbio{
+.barraPerfil .adicionarbio {
   width: 80%;
   height: 10%;
   display: flex;
@@ -141,7 +144,7 @@ body {
   display: none;
 }
 
-.barraPerfil .adicionarbio input{
+.barraPerfil .adicionarbio input {
   width: 70%;
   height: 60%;
   background-color: transparent;
@@ -155,7 +158,7 @@ body {
   font-family: 'Ubuntu';
 }
 
-.barraPerfil .adicionarbio button{
+.barraPerfil .adicionarbio button {
   width: 25%;
   height: 60%;
   background-color: var(--clr);
@@ -167,12 +170,12 @@ body {
   outline: none;
 }
 
-.barraPerfil .adicionarbio button:focus{
+.barraPerfil .adicionarbio button:focus {
   background-color: transparent;
   color: var(--clr);
 }
 
-.barraPerfil .conteudo .links{
+.barraPerfil .conteudo .links {
   width: 80%;
   height: 30%;
   display: flex;
@@ -181,25 +184,26 @@ body {
   /* background-color: violet; */
 }
 
-.barraPerfil .conteudo .links ul{
+.barraPerfil .conteudo .links ul {
   list-style: none;
   width: 45%;
 }
 
-.barraPerfil .conteudo .links ul li{
+.barraPerfil .conteudo .links ul li {
   display: flex;
   align-items: center;
   justify-content: space-around;
   cursor: pointer;
 }
 
-.barraPerfil .conteudo .links ul li a{
+.barraPerfil .conteudo .links ul li a {
   color: var(--clr);
   font-size: 1.3em;
   font-family: var(--messi);
   text-decoration: underline;
 }
-.barraPerfil .conteudo .links ul li span{
+
+.barraPerfil .conteudo .links ul li span {
   color: var(--clr);
 }
 
@@ -233,10 +237,60 @@ body {
 
 
 
+.ranking {
+  width: 20%;
+  height: 40px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 50000;
+}
 
+.ranking .botoes {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
 
+.ranking button {
+  width: 200px;
+  height: 40px;
+  border: 2px solid var(--clr);
+  border-radius: 5px;
+  background-color: var(--clr);
+  color: #f5f5f5;
+  font-family: var(--messi);
 
+}
 
+.ranking .verResultado {
+  width: 300px;
+  height: 200px;
+  background-color: var(--clr);
+  position: fixed;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 10px;
+  border-radius: 10px 0 0px 10px;
+}
+
+.ranking .verResultado .resultar {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: column;
+}
+
+.ranking .verResultado p {
+  color: #f5f5f5;
+  font-family: 'Ubuntu';
+}
+
+.ranking .verResultado span {
+  font-weight: 800;
+}
 
 
 
@@ -331,7 +385,7 @@ body {
   /* transition: none; */
 }
 
-.conteudoPrincipal .avisos .div-form textarea:focus{
+.conteudoPrincipal .avisos .div-form textarea:focus {
   width: 99%;
   height: 100px;
 }
@@ -376,7 +430,7 @@ body {
   flex-direction: column;
 }
 
-.conteudoPrincipal .avisos .feed .titulo{
+.conteudoPrincipal .avisos .feed .titulo {
   width: 80%;
   height: 13vh;
   /* background-color: violet; */
@@ -385,7 +439,8 @@ body {
   justify-content: center;
   /* position: fixed; */
 }
-.conteudoPrincipal .avisos .feed .titulo h2{
+
+.conteudoPrincipal .avisos .feed .titulo h2 {
   color: var(--clr);
   font-size: 2.5em;
   font-family: 'label';
@@ -414,11 +469,12 @@ body {
   padding: 20px;
 }
 
-.publicacao span{
+.publicacao span {
   font-family: var(--messi);
   color: var(--clr);
   font-size: 1.15em;
 }
+
 .publicacao button {
   width: 13%;
   height: 28px;
@@ -437,10 +493,10 @@ body {
   font-size: 0.9em;
 }
 
-.publicacao-descricao{
+.publicacao-descricao {
   width: 95%;
   height: auto;
-  padding:  0 0 2% 0;
+  padding: 0 0 2% 0;
   color: #383838;
   font-family: 'Ubuntu';
 }
@@ -460,7 +516,7 @@ body {
   /* margin-top: 80px; */
 }
 
-.div-results .feed-container .comNada{
+.div-results .feed-container .comNada {
   color: var(--clr);
   font-size: 2em;
   font-family: 'Dancing Script';
@@ -472,6 +528,6 @@ body {
   justify-content: flex-end;
 }
 
-.div-buttons > * {
+.div-buttons>* {
   margin-left: 30px;
 }

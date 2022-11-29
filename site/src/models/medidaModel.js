@@ -31,27 +31,21 @@ function buscarUltimasMedidas(idAquario, limite_linhas) {
     return database.executar(instrucaoSql);
 }
 
-function buscarMedidasEmTempoReal(idAquario) {
+function buscarMedidasEmTempoReal(idUsuario) {
 
     instrucaoSql = ''
 
     if (process.env.AMBIENTE_PROCESSO == "producao") {
-        instrucaoSql = `select top 1
-        dht11_temperatura as temperatura, 
-        dht11_umidade as umidade,  
-                        CONVERT(varchar, momento, 108) as momento_grafico, 
-                        fk_aquario 
-                        from medida where fk_aquario = ${idAquario} 
-                    order by id desc`;
+        instrucaoSql = `select usuario.nome, 
+        count(post.fkUsuario) as Quantidade 
+        from usuario join post on idUsuario = fkUsuario 
+        group by Usuario.nome;`;
 
     } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
-        instrucaoSql = `select 
-        dht11_temperatura as temperatura, 
-        dht11_umidade as umidade,
-                        DATE_FORMAT(momento,'%H:%i:%s') as momento_grafico, 
-                        fk_aquario 
-                        from medida where fk_aquario = ${idAquario} 
-                    order by id desc limit 1`;
+        instrucaoSql = `select usuario.nome, 
+        count(post.fkUsuario) as Quantidade 
+        from usuario join post on idUsuario = fkUsuario 
+        group by Usuario.nome;`;
     } else {
         console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
         return
@@ -61,8 +55,16 @@ function buscarMedidasEmTempoReal(idAquario) {
     return database.executar(instrucaoSql);
 }
 
+function mostrarMetrica(){
+    var intrucao = `select usuario.nome, count(post.fkUsuario) as Quantidade from usuario join post on idUsuario = fkUsuario group by Usuario.nome order by Quantidade desc;`
+
+    console.log("Executando a instrução SQL: \n" + intrucao);
+    return database.executar(intrucao);
+}
+
 
 module.exports = {
     buscarUltimasMedidas,
-    buscarMedidasEmTempoReal
+    buscarMedidasEmTempoReal,
+    mostrarMetrica
 }
